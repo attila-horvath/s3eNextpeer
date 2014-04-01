@@ -1,0 +1,19 @@
+#!/usr/bin/env mkb
+# Builder mkb file for the java portion of the s3eNextpeer extension on android
+platform JAVA
+
+files
+{
+    (source/android)
+    s3eNextpeer.java
+    s3eNextpeerActivity.java
+    (source/android/com/nextpeer/android)
+    R.java
+    s3eNextpeerApplication.java
+}
+librarypath "C:/Marmalade/7.2/examples/HelloWorld/s3eNextpeer/lib/android/nextpeer_dist.jar"
+librarypath "C:/Marmalade/7.2/examples/HelloWorld/s3eNextpeer/lib/android/android-support-v4.jar"
+librarypath "$MARMALADE_ROOT/s3e/deploy/plugins/android/android.jar"
+librarypath "$MARMALADE_ROOT/s3e/loader/android/s3e_release.jar"
+
+option output-name=lib/android/s3eNextpeer.jar

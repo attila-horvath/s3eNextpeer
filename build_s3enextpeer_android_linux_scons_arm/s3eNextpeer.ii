@@ -1,0 +1,324 @@
+# 1 "C:\\Marmalade\\7.2\\examples\\HelloWorld\\s3eNextpeer\\source\\generic\\s3eNextpeer.cpp"
+# 1 "c:\\Marmalade\\7.2\\examples\\HelloWorld\\s3eNextpeer\\build_s3enextpeer_android_linux_scons_arm//"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "./temp_defines_debug.h" 1
+# 1 "<command-line>" 2
+# 1 "C:\\Marmalade\\7.2\\examples\\HelloWorld\\s3eNextpeer\\source\\generic\\s3eNextpeer.cpp"
+# 13 "C:\\Marmalade\\7.2\\examples\\HelloWorld\\s3eNextpeer\\source\\generic\\s3eNextpeer.cpp"
+# 1 "../source/h/s3eNextpeer_internal.h" 1
+# 18 "../source/h/s3eNextpeer_internal.h"
+# 1 "../../../../s3e/h/s3eTypes.h" 1
+# 35 "../../../../s3e/h/s3eTypes.h"
+typedef unsigned char s3e_uint8_t;
+typedef signed char s3e_int8_t;
+typedef unsigned short int s3e_uint16_t;
+typedef signed short int s3e_int16_t;
+typedef unsigned int s3e_uint32_t;
+typedef signed int s3e_int32_t;
+# 49 "../../../../s3e/h/s3eTypes.h"
+  typedef signed long long s3e_int64_t;
+  typedef unsigned long long s3e_uint64_t;
+# 62 "../../../../s3e/h/s3eTypes.h"
+typedef s3e_uint64_t uint64_t;
+typedef s3e_int64_t int64_t;
+typedef s3e_uint32_t uint32_t;
+typedef s3e_int32_t int32_t;
+typedef s3e_uint16_t uint16_t;
+typedef s3e_int16_t int16_t;
+typedef s3e_uint8_t uint8_t;
+typedef s3e_int8_t int8_t;
+# 84 "../../../../s3e/h/s3eTypes.h"
+    typedef int intptr_t;
+    typedef unsigned int uintptr_t;
+# 96 "../../../../s3e/h/s3eTypes.h"
+typedef unsigned int uint;
+typedef unsigned short int ushort;
+typedef unsigned long int ulong;
+typedef unsigned char uint8;
+typedef signed char int8;
+
+
+typedef int64_t int64;
+typedef uint64_t uint64;
+
+
+
+
+typedef unsigned int uint32;
+
+
+
+
+
+
+typedef signed int int32;
+
+
+
+
+
+
+typedef uint16_t uint16;
+
+
+
+
+typedef int16_t int16;
+# 207 "../../../../s3e/h/s3eTypes.h"
+typedef enum s3eResult
+{
+    S3E_RESULT_SUCCESS = 0,
+    S3E_RESULT_ERROR = 1
+} s3eResult;
+
+
+
+
+typedef uint8 s3eBool;
+# 227 "../../../../s3e/h/s3eTypes.h"
+typedef unsigned short s3eWChar;
+# 237 "../../../../s3e/h/s3eTypes.h"
+typedef int32 (*s3eCallback) (void* systemData, void* userData);
+# 19 "../source/h/s3eNextpeer_internal.h" 2
+# 1 "../h/s3eNextpeer.h" 1
+# 27 "../h/s3eNextpeer.h"
+typedef enum s3eNextperCallback
+{
+    S3E_NEXTPEER_CALLBACK_DID_TOURNAMENT_START,
+    S3E_NEXTPEER_CALLBACK_DID_TOURNAMENT_END,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_WILL_APPEAR,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_DID_APPEAR,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_WILL_DISAPPEAR,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_DID_DISAPPEAR,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_RETURN_TO_GAME,
+    S3E_NEXTPEER_CALLBACK_WILL_TOURNAMENT_START,
+    S3E_NEXTPEER_CALLBACK_DID_RECEIVE_CUSTOM_MESSAGE,
+    S3E_NEXTPEER_CALLBACK_OPEN_URL_CALLED,
+    S3E_NEXTPEER_CALLBACK_VCURRENCY_ADD_CURRENCY_AMOUNT,
+    S3E_NEXTPEER_CALLBACK_MAX
+} s3eNextperCallback;
+
+
+
+
+
+
+
+typedef struct s3eNextpeerTournamentStartData {
+ char* m_tournamentUuid;
+ int m_tournamentSeconds;
+} s3eNextpeerTournamentStartData;
+
+
+
+
+
+typedef struct s3eNextpeerCustomMessageData {
+ char* m_playerName;
+    void* m_playerImageData;
+    uint32 m_playerImageDataLen;
+ void* m_dataReceived;
+    uint32 m_dataReceivedLen;
+} s3eNextpeerCustomMessageData;
+
+extern "C" {
+
+
+
+
+
+s3eBool s3eNextpeerAvailable();
+
+void s3eNextpeerInitWithProductKey(const char* productKey);
+
+void s3eNextpeerLaunchDashboard();
+
+void s3eNextpeerLaunchDashboardWithCurrencyAmount(uint32 unifiedVirtualCurrencyAmount);
+
+void s3eNextpeerDismissDashboard();
+
+void s3eNextpeerShutDown();
+
+void s3eNextpeerReportScoreForCurrentTournament(uint32 score);
+
+s3eBool s3eNextpeerIsCurrentlyInTournament();
+
+uint32 s3eNextpeerTimeLeftInTournament();
+
+void s3eNextpeerReportForfeitForCurrentTournament();
+
+void s3eNextpeerPushDataToOtherPlayers(const void* data, uint32 length);
+
+void s3eNextpeerPushNotificationToOtherPlayers(const char * notice);
+
+void s3eNextpeerHandleOpenURL(void* url);
+
+void s3eNextpeerRegisterOpenURLCallback();
+
+void s3eNextpeerSetUnifiedVirtualCurrencySupport(s3eBool unifiedVirtualCurrencySupported);
+
+void s3eNextpeerOpenFeed();
+
+s3eResult s3eNextpeerRegisterCallback(s3eNextperCallback cbid, s3eCallback fn, void* pData);
+
+s3eResult s3eNextpeerUnRegisterCallback(s3eNextperCallback cbid, s3eCallback fn);
+
+}
+# 20 "../source/h/s3eNextpeer_internal.h" 2
+# 1 "../source/h/s3eNextpeer_autodefs.h" 1
+# 21 "../source/h/s3eNextpeer_internal.h" 2
+
+
+
+
+
+
+
+s3eResult s3eNextpeerInit();
+
+
+
+
+s3eResult s3eNextpeerInit_platform();
+
+
+
+
+
+void s3eNextpeerTerminate();
+
+
+
+
+void s3eNextpeerTerminate_platform();
+void s3eNextpeerInitWithProductKey_platform(const char* productKey);
+
+void s3eNextpeerLaunchDashboard_platform();
+
+void s3eNextpeerLaunchDashboardWithCurrencyAmount_platform(uint32 unifiedVirtualCurrencyAmount);
+
+void s3eNextpeerDismissDashboard_platform();
+
+void s3eNextpeerShutDown_platform();
+
+void s3eNextpeerReportScoreForCurrentTournament_platform(uint32 score);
+
+s3eBool s3eNextpeerIsCurrentlyInTournament_platform();
+
+uint32 s3eNextpeerTimeLeftInTournament_platform();
+
+void s3eNextpeerReportForfeitForCurrentTournament_platform();
+
+void s3eNextpeerPushDataToOtherPlayers_platform(const void* data, uint32 length);
+
+void s3eNextpeerPushNotificationToOtherPlayers_platform(const char * notice);
+
+void s3eNextpeerHandleOpenURL_platform(void* url);
+
+void s3eNextpeerRegisterOpenURLCallback_platform();
+
+void s3eNextpeerSetUnifiedVirtualCurrencySupport_platform(s3eBool unifiedVirtualCurrencySupported);
+
+void s3eNextpeerOpenFeed_platform();
+
+s3eResult s3eNextpeerRegisterCallback_platform(s3eNextperCallback cbid, s3eCallback fn, void* pData);
+
+s3eResult s3eNextpeerUnRegisterCallback_platform(s3eNextperCallback cbid, s3eCallback fn);
+# 14 "C:\\Marmalade\\7.2\\examples\\HelloWorld\\s3eNextpeer\\source\\generic\\s3eNextpeer.cpp" 2
+s3eResult s3eNextpeerInit()
+{
+
+    return s3eNextpeerInit_platform();
+}
+
+void s3eNextpeerTerminate()
+{
+
+    s3eNextpeerTerminate_platform();
+}
+
+void s3eNextpeerInitWithProductKey(const char* productKey)
+{
+ s3eNextpeerInitWithProductKey_platform(productKey);
+}
+
+void s3eNextpeerLaunchDashboard()
+{
+ s3eNextpeerLaunchDashboard_platform();
+}
+
+void s3eNextpeerLaunchDashboardWithCurrencyAmount(uint32 unifiedVirtualCurrencyAmount)
+{
+ s3eNextpeerLaunchDashboardWithCurrencyAmount_platform(unifiedVirtualCurrencyAmount);
+}
+
+void s3eNextpeerDismissDashboard()
+{
+ s3eNextpeerDismissDashboard_platform();
+}
+
+void s3eNextpeerShutDown()
+{
+ s3eNextpeerShutDown_platform();
+}
+
+void s3eNextpeerReportScoreForCurrentTournament(uint32 score)
+{
+ s3eNextpeerReportScoreForCurrentTournament_platform(score);
+}
+
+s3eBool s3eNextpeerIsCurrentlyInTournament()
+{
+ return s3eNextpeerIsCurrentlyInTournament_platform();
+}
+
+uint32 s3eNextpeerTimeLeftInTournament()
+{
+ return s3eNextpeerTimeLeftInTournament_platform();
+}
+
+void s3eNextpeerReportForfeitForCurrentTournament()
+{
+ s3eNextpeerReportForfeitForCurrentTournament_platform();
+}
+
+void s3eNextpeerPushDataToOtherPlayers(const void* data, uint32 length)
+{
+ s3eNextpeerPushDataToOtherPlayers_platform(data, length);
+}
+
+void s3eNextpeerPushNotificationToOtherPlayers(const char * notice)
+{
+ s3eNextpeerPushNotificationToOtherPlayers_platform(notice);
+}
+
+void s3eNextpeerHandleOpenURL(void* url)
+{
+ s3eNextpeerHandleOpenURL_platform(url);
+}
+
+void s3eNextpeerRegisterOpenURLCallback()
+{
+ s3eNextpeerRegisterOpenURLCallback_platform();
+}
+
+void s3eNextpeerSetUnifiedVirtualCurrencySupport(s3eBool unifiedVirtualCurrencySupported)
+{
+ s3eNextpeerSetUnifiedVirtualCurrencySupport_platform(unifiedVirtualCurrencySupported);
+}
+
+void s3eNextpeerOpenFeed()
+{
+ s3eNextpeerOpenFeed_platform();
+}
+
+s3eResult s3eNextpeerRegisterCallback(s3eNextperCallback cbid, s3eCallback fn, void* pData)
+{
+ return s3eNextpeerRegisterCallback_platform(cbid, fn, pData);
+}
+
+s3eResult s3eNextpeerUnRegisterCallback(s3eNextperCallback cbid, s3eCallback fn)
+{
+ return s3eNextpeerUnRegisterCallback_platform(cbid, fn);
+}

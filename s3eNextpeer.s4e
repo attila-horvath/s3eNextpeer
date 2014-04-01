@@ -1,0 +1,91 @@
+#########################################################################
+# 
+# Nextpeer CONFIDENTIAL
+# __________________
+# 
+#  [2011] - [2012] Innobell MS  
+#  All Rights Reserved.
+# 
+# NOTICE:  All information contained herein is, and remains
+# the property of Innobell MS and its suppliers,
+# if any.  The intellectual and technical concepts contained
+# herein are proprietary to Innobell MS
+# and its suppliers and may be covered by U.S. and Foreign Patents,
+# patents in process, and are protected by trade secret or copyright law.
+# Dissemination of this information or reproduction of this material
+# is strictly forbidden unless prior written permission is obtained
+# from Innobell MS.
+#########################################################################
+
+include:
+
+#include <s3eTypes.h>
+
+#define S3E_NEXTPEER_STRING_MAX_1 50
+#define S3E_NEXTPEER_STRING_MAX_2 150
+
+/**
+ * Enumeration for various callbacks in the s3eNextpeer extension
+ */
+typedef enum s3eNextperCallback
+{
+    S3E_NEXTPEER_CALLBACK_DID_TOURNAMENT_START,
+    S3E_NEXTPEER_CALLBACK_DID_TOURNAMENT_END,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_WILL_APPEAR,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_DID_APPEAR,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_WILL_DISAPPEAR,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_DID_DISAPPEAR,
+    S3E_NEXTPEER_CALLBACK_DASHBOARD_RETURN_TO_GAME,
+    S3E_NEXTPEER_CALLBACK_WILL_TOURNAMENT_START,
+    S3E_NEXTPEER_CALLBACK_DID_RECEIVE_CUSTOM_MESSAGE,
+    S3E_NEXTPEER_CALLBACK_OPEN_URL_CALLED,
+    S3E_NEXTPEER_CALLBACK_VCURRENCY_ADD_CURRENCY_AMOUNT,
+    S3E_NEXTPEER_CALLBACK_MAX
+} s3eNextperCallback;
+
+
+/**
+ * Structure to hold tournament info for callbacks. For now holds only the UUID and the time.
+ * 
+ * @see s3eNextpeerTournamentStartCallback
+ */
+typedef struct s3eNextpeerTournamentStartData {
+	char* m_tournamentUuid; // Tournament UUID
+	int m_tournamentSeconds; // Tournament time in seconds
+} s3eNextpeerTournamentStartData;
+
+/**
+ * Structure to hold custom message data for callbacks
+ * 
+ */
+typedef struct s3eNextpeerCustomMessageData {
+	char* m_playerName; // Sender's name
+    void* m_playerImageData; // Sender's image data
+    uint32 m_playerImageDataLen; // Sender's image data length
+	void* m_dataReceived; // Data being sent
+    uint32 m_dataReceivedLen; // Data length
+} s3eNextpeerCustomMessageData;
+
+
+functions:
+
+// Nextpeer related functions
+void s3eNextpeerInitWithProductKey(const char* productKey) void run_on_os_thread
+void s3eNextpeerLaunchDashboard() void run_on_os_thread
+void s3eNextpeerLaunchDashboardWithCurrencyAmount(uint32 unifiedVirtualCurrencyAmount) void run_on_os_thread
+void s3eNextpeerDismissDashboard() void run_on_os_thread
+void s3eNextpeerShutDown() void run_on_os_thread
+void s3eNextpeerReportScoreForCurrentTournament(uint32 score) void
+s3eBool s3eNextpeerIsCurrentlyInTournament() 0
+uint32 s3eNextpeerTimeLeftInTournament() 0
+void s3eNextpeerReportForfeitForCurrentTournament() void
+void s3eNextpeerPushDataToOtherPlayers(const void* data, uint32 length) void
+void s3eNextpeerPushNotificationToOtherPlayers(const char * notice) void
+void s3eNextpeerHandleOpenURL(void* url) void
+void s3eNextpeerRegisterOpenURLCallback() void
+void s3eNextpeerSetUnifiedVirtualCurrencySupport(s3eBool unifiedVirtualCurrencySupported) void
+void s3eNextpeerOpenFeed() void
+
+// Generic functions for meta usage
+s3eResult s3eNextpeerRegisterCallback(s3eNextperCallback cbid, s3eCallback fn, void* pData) S3E_RESULT_SUCCESS
+s3eResult s3eNextpeerUnRegisterCallback(s3eNextperCallback cbid, s3eCallback fn) S3E_RESULT_SUCCESS
