@@ -22,46 +22,46 @@
 /**
  * Definitions for functions types passed to/from s3eExt interface
  */
-typedef       void(*s3eNextpeerInitWithProductKey_t)(const char* productKey);
+typedef  s3eResult(*s3eNextpeerRegister_t)(s3eNextpeerCallback cbid, s3eCallback fn, void* userData);
+typedef  s3eResult(*s3eNextpeerUnRegister_t)(s3eNextpeerCallback cbid, s3eCallback fn);
+typedef       void(*s3eNextpeerChangeCurrentPlayerAvatarUrl_t)(char* Url);
+typedef       void(*s3eNextpeerChangeCurrentPlayerName_t)(char* name);
+typedef       void(*s3eNextpeerEnableRankingDisplay_t)(bool enableRankingDisplay);
+typedef s3eNextpeerTournamentPlayer(*s3eNextpeerGetCurrentPlayerDetails_t)();
+typedef const char*(*s3eNextpeerGetNextpeerVersion_t)();
+typedef       bool(*s3eNextpeerIsCurrentlyInTournament_t)();
+typedef       bool(*s3eNextpeerIsNextpeerInitialised_t)();
+typedef       bool(*s3eNextpeerIsNextpeerSupported_t)();
 typedef       void(*s3eNextpeerLaunchDashboard_t)();
-typedef       void(*s3eNextpeerLaunchDashboardWithCurrencyAmount_t)(uint32 unifiedVirtualCurrencyAmount);
-typedef       void(*s3eNextpeerDismissDashboard_t)();
-typedef       void(*s3eNextpeerShutDown_t)();
-typedef       void(*s3eNextpeerReportScoreForCurrentTournament_t)(uint32 score);
-typedef    s3eBool(*s3eNextpeerIsCurrentlyInTournament_t)();
-typedef     uint32(*s3eNextpeerTimeLeftInTournament_t)();
+typedef       void(*s3eNextpeerPushDataToOtherPlayers_t)(void* data, uint32 length);
+typedef       void(*s3eNextpeerReportControlledTournamentOverWithScore_t)(uint32 score);
 typedef       void(*s3eNextpeerReportForfeitForCurrentTournament_t)();
-typedef       void(*s3eNextpeerPushDataToOtherPlayers_t)(const void* data, uint32 length);
-typedef       void(*s3eNextpeerPushNotificationToOtherPlayers_t)(const char * notice);
-typedef       void(*s3eNextpeerHandleOpenURL_t)(void* url);
-typedef       void(*s3eNextpeerRegisterOpenURLCallback_t)();
-typedef       void(*s3eNextpeerSetUnifiedVirtualCurrencySupport_t)(s3eBool unifiedVirtualCurrencySupported);
-typedef       void(*s3eNextpeerOpenFeed_t)();
-typedef  s3eResult(*s3eNextpeerRegisterCallback_t)(s3eNextperCallback cbid, s3eCallback fn, void* pData);
-typedef  s3eResult(*s3eNextpeerUnRegisterCallback_t)(s3eNextperCallback cbid, s3eCallback fn);
+typedef       void(*s3eNextpeerReportScoreForCurrentTournament_t)(uint32 score);
+typedef     uint32(*s3eNextpeerTimeLeftForTournament_t)();
+typedef       void(*s3eNextpeerUnreliablePushDataToOtherPlayers_t)(void* data, uint32 length);
 
 /**
  * struct that gets filled in by s3eNextpeerRegister
  */
 typedef struct s3eNextpeerFuncs
 {
-    s3eNextpeerInitWithProductKey_t m_s3eNextpeerInitWithProductKey;
-    s3eNextpeerLaunchDashboard_t m_s3eNextpeerLaunchDashboard;
-    s3eNextpeerLaunchDashboardWithCurrencyAmount_t m_s3eNextpeerLaunchDashboardWithCurrencyAmount;
-    s3eNextpeerDismissDashboard_t m_s3eNextpeerDismissDashboard;
-    s3eNextpeerShutDown_t m_s3eNextpeerShutDown;
-    s3eNextpeerReportScoreForCurrentTournament_t m_s3eNextpeerReportScoreForCurrentTournament;
+    s3eNextpeerRegister_t m_s3eNextpeerRegister;
+    s3eNextpeerUnRegister_t m_s3eNextpeerUnRegister;
+    s3eNextpeerChangeCurrentPlayerAvatarUrl_t m_s3eNextpeerChangeCurrentPlayerAvatarUrl;
+    s3eNextpeerChangeCurrentPlayerName_t m_s3eNextpeerChangeCurrentPlayerName;
+    s3eNextpeerEnableRankingDisplay_t m_s3eNextpeerEnableRankingDisplay;
+    s3eNextpeerGetCurrentPlayerDetails_t m_s3eNextpeerGetCurrentPlayerDetails;
+    s3eNextpeerGetNextpeerVersion_t m_s3eNextpeerGetNextpeerVersion;
     s3eNextpeerIsCurrentlyInTournament_t m_s3eNextpeerIsCurrentlyInTournament;
-    s3eNextpeerTimeLeftInTournament_t m_s3eNextpeerTimeLeftInTournament;
-    s3eNextpeerReportForfeitForCurrentTournament_t m_s3eNextpeerReportForfeitForCurrentTournament;
+    s3eNextpeerIsNextpeerInitialised_t m_s3eNextpeerIsNextpeerInitialised;
+    s3eNextpeerIsNextpeerSupported_t m_s3eNextpeerIsNextpeerSupported;
+    s3eNextpeerLaunchDashboard_t m_s3eNextpeerLaunchDashboard;
     s3eNextpeerPushDataToOtherPlayers_t m_s3eNextpeerPushDataToOtherPlayers;
-    s3eNextpeerPushNotificationToOtherPlayers_t m_s3eNextpeerPushNotificationToOtherPlayers;
-    s3eNextpeerHandleOpenURL_t m_s3eNextpeerHandleOpenURL;
-    s3eNextpeerRegisterOpenURLCallback_t m_s3eNextpeerRegisterOpenURLCallback;
-    s3eNextpeerSetUnifiedVirtualCurrencySupport_t m_s3eNextpeerSetUnifiedVirtualCurrencySupport;
-    s3eNextpeerOpenFeed_t m_s3eNextpeerOpenFeed;
-    s3eNextpeerRegisterCallback_t m_s3eNextpeerRegisterCallback;
-    s3eNextpeerUnRegisterCallback_t m_s3eNextpeerUnRegisterCallback;
+    s3eNextpeerReportControlledTournamentOverWithScore_t m_s3eNextpeerReportControlledTournamentOverWithScore;
+    s3eNextpeerReportForfeitForCurrentTournament_t m_s3eNextpeerReportForfeitForCurrentTournament;
+    s3eNextpeerReportScoreForCurrentTournament_t m_s3eNextpeerReportScoreForCurrentTournament;
+    s3eNextpeerTimeLeftForTournament_t m_s3eNextpeerTimeLeftForTournament;
+    s3eNextpeerUnreliablePushDataToOtherPlayers_t m_s3eNextpeerUnreliablePushDataToOtherPlayers;
 } s3eNextpeerFuncs;
 
 static s3eNextpeerFuncs g_Ext;
@@ -107,9 +107,49 @@ s3eBool s3eNextpeerAvailable()
     return g_GotExt ? S3E_TRUE : S3E_FALSE;
 }
 
-void s3eNextpeerInitWithProductKey(const char* productKey)
+s3eResult s3eNextpeerRegister(s3eNextpeerCallback cbid, s3eCallback fn, void* userData)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[0] func: s3eNextpeerInitWithProductKey"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[0] func: s3eNextpeerRegister"));
+
+    if (!_extLoad())
+        return S3E_RESULT_ERROR;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eResult ret = g_Ext.m_s3eNextpeerRegister(cbid, fn, userData);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+s3eResult s3eNextpeerUnRegister(s3eNextpeerCallback cbid, s3eCallback fn)
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[1] func: s3eNextpeerUnRegister"));
+
+    if (!_extLoad())
+        return S3E_RESULT_ERROR;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eResult ret = g_Ext.m_s3eNextpeerUnRegister(cbid, fn);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+void s3eNextpeerChangeCurrentPlayerAvatarUrl(char* Url)
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[2] func: s3eNextpeerChangeCurrentPlayerAvatarUrl"));
 
     if (!_extLoad())
         return;
@@ -118,7 +158,7 @@ void s3eNextpeerInitWithProductKey(const char* productKey)
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    g_Ext.m_s3eNextpeerInitWithProductKey(productKey);
+    g_Ext.m_s3eNextpeerChangeCurrentPlayerAvatarUrl(Url);
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
@@ -127,9 +167,149 @@ void s3eNextpeerInitWithProductKey(const char* productKey)
     return;
 }
 
+void s3eNextpeerChangeCurrentPlayerName(char* name)
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[3] func: s3eNextpeerChangeCurrentPlayerName"));
+
+    if (!_extLoad())
+        return;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    g_Ext.m_s3eNextpeerChangeCurrentPlayerName(name);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return;
+}
+
+void s3eNextpeerEnableRankingDisplay(bool enableRankingDisplay)
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[4] func: s3eNextpeerEnableRankingDisplay"));
+
+    if (!_extLoad())
+        return;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    g_Ext.m_s3eNextpeerEnableRankingDisplay(enableRankingDisplay);
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return;
+}
+
+s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails()
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[5] func: s3eNextpeerGetCurrentPlayerDetails"));
+
+    if (!_extLoad())
+        return;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    s3eNextpeerTournamentPlayer ret = g_Ext.m_s3eNextpeerGetCurrentPlayerDetails();
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+const char* s3eNextpeerGetNextpeerVersion()
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[6] func: s3eNextpeerGetNextpeerVersion"));
+
+    if (!_extLoad())
+        return;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    const char* ret = g_Ext.m_s3eNextpeerGetNextpeerVersion();
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+bool s3eNextpeerIsCurrentlyInTournament()
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[7] func: s3eNextpeerIsCurrentlyInTournament"));
+
+    if (!_extLoad())
+        return 0;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    bool ret = g_Ext.m_s3eNextpeerIsCurrentlyInTournament();
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+bool s3eNextpeerIsNextpeerInitialised()
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[8] func: s3eNextpeerIsNextpeerInitialised"));
+
+    if (!_extLoad())
+        return 0;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    bool ret = g_Ext.m_s3eNextpeerIsNextpeerInitialised();
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
+bool s3eNextpeerIsNextpeerSupported()
+{
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[9] func: s3eNextpeerIsNextpeerSupported"));
+
+    if (!_extLoad())
+        return 0;
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+#endif
+
+    bool ret = g_Ext.m_s3eNextpeerIsNextpeerSupported();
+
+#ifdef LOADER_CALL_LOCK
+    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+#endif
+
+    return ret;
+}
+
 void s3eNextpeerLaunchDashboard()
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[1] func: s3eNextpeerLaunchDashboard"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[10] func: s3eNextpeerLaunchDashboard"));
 
     if (!_extLoad())
         return;
@@ -147,149 +327,9 @@ void s3eNextpeerLaunchDashboard()
     return;
 }
 
-void s3eNextpeerLaunchDashboardWithCurrencyAmount(uint32 unifiedVirtualCurrencyAmount)
+void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 length)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[2] func: s3eNextpeerLaunchDashboardWithCurrencyAmount"));
-
-    if (!_extLoad())
-        return;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    g_Ext.m_s3eNextpeerLaunchDashboardWithCurrencyAmount(unifiedVirtualCurrencyAmount);
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return;
-}
-
-void s3eNextpeerDismissDashboard()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[3] func: s3eNextpeerDismissDashboard"));
-
-    if (!_extLoad())
-        return;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    g_Ext.m_s3eNextpeerDismissDashboard();
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return;
-}
-
-void s3eNextpeerShutDown()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[4] func: s3eNextpeerShutDown"));
-
-    if (!_extLoad())
-        return;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    g_Ext.m_s3eNextpeerShutDown();
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return;
-}
-
-void s3eNextpeerReportScoreForCurrentTournament(uint32 score)
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[5] func: s3eNextpeerReportScoreForCurrentTournament"));
-
-    if (!_extLoad())
-        return;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    g_Ext.m_s3eNextpeerReportScoreForCurrentTournament(score);
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return;
-}
-
-s3eBool s3eNextpeerIsCurrentlyInTournament()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[6] func: s3eNextpeerIsCurrentlyInTournament"));
-
-    if (!_extLoad())
-        return 0;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    s3eBool ret = g_Ext.m_s3eNextpeerIsCurrentlyInTournament();
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return ret;
-}
-
-uint32 s3eNextpeerTimeLeftInTournament()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[7] func: s3eNextpeerTimeLeftInTournament"));
-
-    if (!_extLoad())
-        return 0;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    uint32 ret = g_Ext.m_s3eNextpeerTimeLeftInTournament();
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return ret;
-}
-
-void s3eNextpeerReportForfeitForCurrentTournament()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[8] func: s3eNextpeerReportForfeitForCurrentTournament"));
-
-    if (!_extLoad())
-        return;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    g_Ext.m_s3eNextpeerReportForfeitForCurrentTournament();
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return;
-}
-
-void s3eNextpeerPushDataToOtherPlayers(const void* data, uint32 length)
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[9] func: s3eNextpeerPushDataToOtherPlayers"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[11] func: s3eNextpeerPushDataToOtherPlayers"));
 
     if (!_extLoad())
         return;
@@ -307,9 +347,9 @@ void s3eNextpeerPushDataToOtherPlayers(const void* data, uint32 length)
     return;
 }
 
-void s3eNextpeerPushNotificationToOtherPlayers(const char * notice)
+void s3eNextpeerReportControlledTournamentOverWithScore(uint32 score)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[10] func: s3eNextpeerPushNotificationToOtherPlayers"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[12] func: s3eNextpeerReportControlledTournamentOverWithScore"));
 
     if (!_extLoad())
         return;
@@ -318,7 +358,7 @@ void s3eNextpeerPushNotificationToOtherPlayers(const char * notice)
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    g_Ext.m_s3eNextpeerPushNotificationToOtherPlayers(notice);
+    g_Ext.m_s3eNextpeerReportControlledTournamentOverWithScore(score);
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
@@ -327,9 +367,9 @@ void s3eNextpeerPushNotificationToOtherPlayers(const char * notice)
     return;
 }
 
-void s3eNextpeerHandleOpenURL(void* url)
+void s3eNextpeerReportForfeitForCurrentTournament()
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[11] func: s3eNextpeerHandleOpenURL"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[13] func: s3eNextpeerReportForfeitForCurrentTournament"));
 
     if (!_extLoad())
         return;
@@ -338,7 +378,7 @@ void s3eNextpeerHandleOpenURL(void* url)
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    g_Ext.m_s3eNextpeerHandleOpenURL(url);
+    g_Ext.m_s3eNextpeerReportForfeitForCurrentTournament();
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
@@ -347,9 +387,9 @@ void s3eNextpeerHandleOpenURL(void* url)
     return;
 }
 
-void s3eNextpeerRegisterOpenURLCallback()
+void s3eNextpeerReportScoreForCurrentTournament(uint32 score)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[12] func: s3eNextpeerRegisterOpenURLCallback"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[14] func: s3eNextpeerReportScoreForCurrentTournament"));
 
     if (!_extLoad())
         return;
@@ -358,7 +398,7 @@ void s3eNextpeerRegisterOpenURLCallback()
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    g_Ext.m_s3eNextpeerRegisterOpenURLCallback();
+    g_Ext.m_s3eNextpeerReportScoreForCurrentTournament(score);
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
@@ -367,9 +407,9 @@ void s3eNextpeerRegisterOpenURLCallback()
     return;
 }
 
-void s3eNextpeerSetUnifiedVirtualCurrencySupport(s3eBool unifiedVirtualCurrencySupported)
+uint32 s3eNextpeerTimeLeftForTournament()
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[13] func: s3eNextpeerSetUnifiedVirtualCurrencySupport"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[15] func: s3eNextpeerTimeLeftForTournament"));
 
     if (!_extLoad())
         return;
@@ -378,47 +418,7 @@ void s3eNextpeerSetUnifiedVirtualCurrencySupport(s3eBool unifiedVirtualCurrencyS
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    g_Ext.m_s3eNextpeerSetUnifiedVirtualCurrencySupport(unifiedVirtualCurrencySupported);
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return;
-}
-
-void s3eNextpeerOpenFeed()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[14] func: s3eNextpeerOpenFeed"));
-
-    if (!_extLoad())
-        return;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    g_Ext.m_s3eNextpeerOpenFeed();
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return;
-}
-
-s3eResult s3eNextpeerRegisterCallback(s3eNextperCallback cbid, s3eCallback fn, void* pData)
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[15] func: s3eNextpeerRegisterCallback"));
-
-    if (!_extLoad())
-        return S3E_RESULT_SUCCESS;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    s3eResult ret = g_Ext.m_s3eNextpeerRegisterCallback(cbid, fn, pData);
+    uint32 ret = g_Ext.m_s3eNextpeerTimeLeftForTournament();
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
@@ -427,22 +427,22 @@ s3eResult s3eNextpeerRegisterCallback(s3eNextperCallback cbid, s3eCallback fn, v
     return ret;
 }
 
-s3eResult s3eNextpeerUnRegisterCallback(s3eNextperCallback cbid, s3eCallback fn)
+void s3eNextpeerUnreliablePushDataToOtherPlayers(void* data, uint32 length)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[16] func: s3eNextpeerUnRegisterCallback"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[16] func: s3eNextpeerUnreliablePushDataToOtherPlayers"));
 
     if (!_extLoad())
-        return S3E_RESULT_SUCCESS;
+        return;
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    s3eResult ret = g_Ext.m_s3eNextpeerUnRegisterCallback(cbid, fn);
+    g_Ext.m_s3eNextpeerUnreliablePushDataToOtherPlayers(data, length);
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
 #endif
 
-    return ret;
+    return;
 }

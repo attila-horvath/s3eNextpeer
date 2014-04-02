@@ -42,39 +42,35 @@ void s3eNextpeerTerminate();
  * Platform-specific termination, implemented on each platform
  */
 void s3eNextpeerTerminate_platform();
-void s3eNextpeerInitWithProductKey_platform(const char* productKey);
+void s3eNextpeerChangeCurrentPlayerAvatarUrl_platform(char* Url);
+
+void s3eNextpeerChangeCurrentPlayerName_platform(char* name);
+
+void s3eNextpeerEnableRankingDisplay_platform(bool enableRankingDisplay);
+
+s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails_platform();
+
+const char* s3eNextpeerGetNextpeerVersion_platform();
+
+bool s3eNextpeerIsCurrentlyInTournament_platform();
+
+bool s3eNextpeerIsNextpeerInitialised_platform();
+
+bool s3eNextpeerIsNextpeerSupported_platform();
 
 void s3eNextpeerLaunchDashboard_platform();
 
-void s3eNextpeerLaunchDashboardWithCurrencyAmount_platform(uint32 unifiedVirtualCurrencyAmount);
+void s3eNextpeerPushDataToOtherPlayers_platform(void* data, uint32 length);
 
-void s3eNextpeerDismissDashboard_platform();
-
-void s3eNextpeerShutDown_platform();
-
-void s3eNextpeerReportScoreForCurrentTournament_platform(uint32 score);
-
-s3eBool s3eNextpeerIsCurrentlyInTournament_platform();
-
-uint32 s3eNextpeerTimeLeftInTournament_platform();
+void s3eNextpeerReportControlledTournamentOverWithScore_platform(uint32 score);
 
 void s3eNextpeerReportForfeitForCurrentTournament_platform();
 
-void s3eNextpeerPushDataToOtherPlayers_platform(const void* data, uint32 length);
+void s3eNextpeerReportScoreForCurrentTournament_platform(uint32 score);
 
-void s3eNextpeerPushNotificationToOtherPlayers_platform(const char * notice);
+uint32 s3eNextpeerTimeLeftForTournament_platform();
 
-void s3eNextpeerHandleOpenURL_platform(void* url);
-
-void s3eNextpeerRegisterOpenURLCallback_platform();
-
-void s3eNextpeerSetUnifiedVirtualCurrencySupport_platform(s3eBool unifiedVirtualCurrencySupported);
-
-void s3eNextpeerOpenFeed_platform();
-
-s3eResult s3eNextpeerRegisterCallback_platform(s3eNextperCallback cbid, s3eCallback fn, void* pData);
-
-s3eResult s3eNextpeerUnRegisterCallback_platform(s3eNextperCallback cbid, s3eCallback fn);
+void s3eNextpeerUnreliablePushDataToOtherPlayers_platform(void* data, uint32 length);
 
 
 #endif /* !S3ENEXTPEER_INTERNAL_H */

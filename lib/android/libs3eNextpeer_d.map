@@ -47,13 +47,13 @@ Discarded input sections
                 0x00000000        0x0 debug\s3eNextpeer_platform.os
  _ZN7_JNIEnv11GetMethodIDEP7_jclassPKcS3_
                 0x00000000        0x0 debug\s3eNextpeer_platform.os
+ _ZN7_JNIEnv16CallObjectMethodEP8_jobjectP10_jmethodIDz
+                0x00000000        0x0 debug\s3eNextpeer_platform.os
  _ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
                 0x00000000        0x0 debug\s3eNextpeer_platform.os
  _ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
                 0x00000000        0x0 debug\s3eNextpeer_platform.os
  _ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
-                0x00000000        0x0 debug\s3eNextpeer_platform.os
- _ZN7_JNIEnv12NewStringUTFEPKc
                 0x00000000        0x0 debug\s3eNextpeer_platform.os
  _ZN7_JNIEnv15RegisterNativesEP7_jclassPK15JNINativeMethodi
                 0x00000000        0x0 debug\s3eNextpeer_platform.os
@@ -187,57 +187,57 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 .note.gnu.build-id
  *(.note.gnu.build-id)
 
-.hash           0x000000f4      0x2a0
+.hash           0x000000f4      0x320
  *(.hash)
- .hash          0x000000f4      0x2a0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .hash          0x000000f4      0x320 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
 .gnu.hash
  *(.gnu.hash)
 
-.dynsym         0x00000394      0x630
+.dynsym         0x00000414      0x650
  *(.dynsym)
- .dynsym        0x00000394      0x630 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .dynsym        0x00000414      0x650 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.dynstr         0x000009c4      0x655
+.dynstr         0x00000a64      0x687
  *(.dynstr)
- .dynstr        0x000009c4      0x655 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .dynstr        0x00000a64      0x687 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.gnu.version    0x0000101a        0x0 load address 0x00001019
+.gnu.version    0x000010ec        0x0 load address 0x000010eb
  *(.gnu.version)
  .gnu.version   0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.gnu.version_d  0x0000101c        0x0 load address 0x00001019
+.gnu.version_d  0x000010ec        0x0 load address 0x000010eb
  *(.gnu.version_d)
  .gnu.version_d
                 0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.gnu.version_r  0x0000101c        0x0 load address 0x00001019
+.gnu.version_r  0x000010ec        0x0 load address 0x000010eb
  *(.gnu.version_r)
  .gnu.version_r
                 0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.rel.dyn        0x0000101c      0x1d0
+.rel.dyn        0x000010ec      0x1c0
  *(.rel.init)
  *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
- .rel.text      0x0000101c       0x10 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .rel.text      0x000010ec       0x10 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.rel.fini)
  *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
  *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
  .rel.data.rel.ro
-                0x0000102c       0xd8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x000010fc       0xd8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
- .rel.data      0x00001104        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .rel.data      0x000011d4        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
  *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
  *(.rel.ctors)
  *(.rel.dtors)
  *(.rel.got)
- .rel.got       0x0000110c       0xd0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .rel.got       0x000011dc       0xc0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
  .rel.fini_array
-                0x000011dc        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x0000129c        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  .rel.init_array
-                0x000011e4        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x000012a4        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
 .rela.dyn
  *(.rela.init)
@@ -252,9 +252,9 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
  *(.rela.got)
  *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
 
-.rel.plt        0x000011ec       0xb0
+.rel.plt        0x000012ac       0xc0
  *(.rel.plt)
- .rel.plt       0x000011ec       0xb0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .rel.plt       0x000012ac       0xc0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
 .rela.plt
  *(.rela.plt)
@@ -262,296 +262,282 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 .init
  *(.init)
 
-.plt            0x0000129c      0x11c
+.plt            0x0000136c      0x134
  *(.plt)
- .plt           0x0000129c      0x11c C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .plt           0x0000136c      0x134 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.text           0x000013b8     0x40c4
+.text           0x000014a0     0x3d6c
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x000013b8       0x28 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
-                0x000013c8                atexit
+ .text          0x000014a0       0x28 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x000014b0                atexit
  .text._ZN7_JNIEnv9FindClassEPKc
-                0x000013e0       0x38 debug\s3eNextpeer_platform.os
-                0x000013e0                _JNIEnv::FindClass(char const*)
+                0x000014c8       0x38 debug\s3eNextpeer_platform.os
+                0x000014c8                _JNIEnv::FindClass(char const*)
  .text._ZN7_JNIEnv17ExceptionOccurredEv
-                0x00001418       0x30 debug\s3eNextpeer_platform.os
-                0x00001418                _JNIEnv::ExceptionOccurred()
- .text._ZN7_JNIEnv17ExceptionDescribeEv
-                0x00001448       0x28 debug\s3eNextpeer_platform.os
-                0x00001448                _JNIEnv::ExceptionDescribe()
- .text._ZN7_JNIEnv14ExceptionClearEv
-                0x00001470       0x28 debug\s3eNextpeer_platform.os
-                0x00001470                _JNIEnv::ExceptionClear()
- .text._ZN7_JNIEnv12NewGlobalRefEP8_jobject
-                0x00001498       0x38 debug\s3eNextpeer_platform.os
-                0x00001498                _JNIEnv::NewGlobalRef(_jobject*)
- .text._ZN7_JNIEnv15DeleteGlobalRefEP8_jobject
-                0x000014d0       0x30 debug\s3eNextpeer_platform.os
-                0x000014d0                _JNIEnv::DeleteGlobalRef(_jobject*)
- .text._ZN7_JNIEnv14DeleteLocalRefEP8_jobject
                 0x00001500       0x30 debug\s3eNextpeer_platform.os
-                0x00001500                _JNIEnv::DeleteLocalRef(_jobject*)
+                0x00001500                _JNIEnv::ExceptionOccurred()
+ .text._ZN7_JNIEnv17ExceptionDescribeEv
+                0x00001530       0x28 debug\s3eNextpeer_platform.os
+                0x00001530                _JNIEnv::ExceptionDescribe()
+ .text._ZN7_JNIEnv14ExceptionClearEv
+                0x00001558       0x28 debug\s3eNextpeer_platform.os
+                0x00001558                _JNIEnv::ExceptionClear()
+ .text._ZN7_JNIEnv12NewGlobalRefEP8_jobject
+                0x00001580       0x38 debug\s3eNextpeer_platform.os
+                0x00001580                _JNIEnv::NewGlobalRef(_jobject*)
+ .text._ZN7_JNIEnv15DeleteGlobalRefEP8_jobject
+                0x000015b8       0x30 debug\s3eNextpeer_platform.os
+                0x000015b8                _JNIEnv::DeleteGlobalRef(_jobject*)
+ .text._ZN7_JNIEnv14DeleteLocalRefEP8_jobject
+                0x000015e8       0x30 debug\s3eNextpeer_platform.os
+                0x000015e8                _JNIEnv::DeleteLocalRef(_jobject*)
  .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
-                0x00001530       0x5c debug\s3eNextpeer_platform.os
-                0x00001530                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+                0x00001618       0x5c debug\s3eNextpeer_platform.os
+                0x00001618                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
  .text._ZN7_JNIEnv11GetMethodIDEP7_jclassPKcS3_
-                0x0000158c       0x48 debug\s3eNextpeer_platform.os
-                0x0000158c                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
+                0x00001674       0x48 debug\s3eNextpeer_platform.os
+                0x00001674                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
+ .text._ZN7_JNIEnv16CallObjectMethodEP8_jobjectP10_jmethodIDz
+                0x000016bc       0x5c debug\s3eNextpeer_platform.os
+                0x000016bc                _JNIEnv::CallObjectMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
-                0x000015d4       0x5c debug\s3eNextpeer_platform.os
-                0x000015d4                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
+                0x00001718       0x5c debug\s3eNextpeer_platform.os
+                0x00001718                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
-                0x00001630       0x5c debug\s3eNextpeer_platform.os
-                0x00001630                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
+                0x00001774       0x5c debug\s3eNextpeer_platform.os
+                0x00001774                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
-                0x0000168c       0x4c debug\s3eNextpeer_platform.os
-                0x0000168c                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
- .text._ZN7_JNIEnv12NewStringUTFEPKc
-                0x000016d8       0x38 debug\s3eNextpeer_platform.os
-                0x000016d8                _JNIEnv::NewStringUTF(char const*)
+                0x000017d0       0x4c debug\s3eNextpeer_platform.os
+                0x000017d0                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv15RegisterNativesEP7_jclassPK15JNINativeMethodi
-                0x00001710       0x48 debug\s3eNextpeer_platform.os
-                0x00001710                _JNIEnv::RegisterNatives(_jclass*, JNINativeMethod const*, int)
+                0x0000181c       0x48 debug\s3eNextpeer_platform.os
+                0x0000181c                _JNIEnv::RegisterNatives(_jclass*, JNINativeMethod const*, int)
  .text._ZN7_JavaVM6GetEnvEPPvi
-                0x00001758       0x40 debug\s3eNextpeer_platform.os
-                0x00001758                _JavaVM::GetEnv(void**, int)
+                0x00001864       0x40 debug\s3eNextpeer_platform.os
+                0x00001864                _JavaVM::GetEnv(void**, int)
  .text._ZL15s3eEdkJNIGetEnvv
-                0x00001798       0x44 debug\s3eNextpeer_platform.os
+                0x000018a4       0x44 debug\s3eNextpeer_platform.os
  .text._ZL27s3eEdkAndroidFindClass_realPKc
-                0x000017dc       0xa4 debug\s3eNextpeer_platform.os
+                0x000018e8       0xa4 debug\s3eNextpeer_platform.os
  .text._ZL22s3eEdkAndroidFindClassPKc
-                0x00001880       0x38 debug\s3eNextpeer_platform.os
+                0x0000198c       0x38 debug\s3eNextpeer_platform.os
  .text._Z22onNextpeerAppearCalledv
-                0x000018b8       0x64 debug\s3eNextpeer_platform.os
-                0x000018b8                onNextpeerAppearCalled()
+                0x000019c4       0x64 debug\s3eNextpeer_platform.os
+                0x000019c4                onNextpeerAppearCalled()
  .text._Z25onNextpeerDisappearCalledv
-                0x0000191c       0x64 debug\s3eNextpeer_platform.os
-                0x0000191c                onNextpeerDisappearCalled()
+                0x00001a28       0x64 debug\s3eNextpeer_platform.os
+                0x00001a28                onNextpeerDisappearCalled()
  .text._Z28onNextpeerReturnToGameCalledv
-                0x00001980       0x64 debug\s3eNextpeer_platform.os
-                0x00001980                onNextpeerReturnToGameCalled()
+                0x00001a8c       0x64 debug\s3eNextpeer_platform.os
+                0x00001a8c                onNextpeerReturnToGameCalled()
  .text._Z31onReceiveTournamentStatusCalledP7_JNIEnvP8_jobjectS2_
-                0x000019e4       0xc4 debug\s3eNextpeer_platform.os
-                0x000019e4                onReceiveTournamentStatusCalled(_JNIEnv*, _jobject*, _jobject*)
+                0x00001af0       0xc4 debug\s3eNextpeer_platform.os
+                0x00001af0                onReceiveTournamentStatusCalled(_JNIEnv*, _jobject*, _jobject*)
  .text._Z26onSupportsTournamentCalledv
-                0x00001aa8       0x64 debug\s3eNextpeer_platform.os
-                0x00001aa8                onSupportsTournamentCalled()
+                0x00001bb4       0x64 debug\s3eNextpeer_platform.os
+                0x00001bb4                onSupportsTournamentCalled()
  .text._Z23onTournamentStartCalledv
-                0x00001b0c       0x64 debug\s3eNextpeer_platform.os
-                0x00001b0c                onTournamentStartCalled()
+                0x00001c18       0x64 debug\s3eNextpeer_platform.os
+                0x00001c18                onTournamentStartCalled()
  .text._Z21onTournamentEndCalledv
-                0x00001b70       0x64 debug\s3eNextpeer_platform.os
-                0x00001b70                onTournamentEndCalled()
+                0x00001c7c       0x64 debug\s3eNextpeer_platform.os
+                0x00001c7c                onTournamentEndCalled()
  .text._Z38onReceiveTournamentCustomMessageCalledv
-                0x00001bd4       0x64 debug\s3eNextpeer_platform.os
-                0x00001bd4                onReceiveTournamentCustomMessageCalled()
+                0x00001ce0       0x64 debug\s3eNextpeer_platform.os
+                0x00001ce0                onReceiveTournamentCustomMessageCalled()
  .text._Z48onReceiveUnreliableTournamentCustomMessageCalledv
-                0x00001c38       0x64 debug\s3eNextpeer_platform.os
-                0x00001c38                onReceiveUnreliableTournamentCustomMessageCalled()
+                0x00001d44       0x64 debug\s3eNextpeer_platform.os
+                0x00001d44                onReceiveUnreliableTournamentCustomMessageCalled()
  .text._Z24s3eNextpeerInit_platformv
-                0x00001c9c      0x854 debug\s3eNextpeer_platform.os
-                0x00001c9c                s3eNextpeerInit_platform()
+                0x00001da8      0x79c debug\s3eNextpeer_platform.os
+                0x00001da8                s3eNextpeerInit_platform()
  .text._Z29s3eNextpeerTerminate_platformv
-                0x000024f0        0x4 debug\s3eNextpeer_platform.os
-                0x000024f0                s3eNextpeerTerminate_platform()
- .text._Z38s3eNextpeerInitWithProductKey_platformPKc
-                0x000024f4       0x68 debug\s3eNextpeer_platform.os
-                0x000024f4                s3eNextpeerInitWithProductKey_platform(char const*)
- .text._Z35s3eNextpeerLaunchDashboard_platformv
-                0x0000255c       0x4c debug\s3eNextpeer_platform.os
-                0x0000255c                s3eNextpeerLaunchDashboard_platform()
- .text._Z53s3eNextpeerLaunchDashboardWithCurrencyAmount_platformj
-                0x000025a8       0x54 debug\s3eNextpeer_platform.os
-                0x000025a8                s3eNextpeerLaunchDashboardWithCurrencyAmount_platform(unsigned int)
- .text._Z36s3eNextpeerDismissDashboard_platformv
-                0x000025fc       0x4c debug\s3eNextpeer_platform.os
-                0x000025fc                s3eNextpeerDismissDashboard_platform()
- .text._Z28s3eNextpeerShutDown_platformv
-                0x00002648       0x4c debug\s3eNextpeer_platform.os
-                0x00002648                s3eNextpeerShutDown_platform()
- .text._Z51s3eNextpeerReportScoreForCurrentTournament_platformj
-                0x00002694       0x54 debug\s3eNextpeer_platform.os
-                0x00002694                s3eNextpeerReportScoreForCurrentTournament_platform(unsigned int)
+                0x00002544        0x4 debug\s3eNextpeer_platform.os
+                0x00002544                s3eNextpeerTerminate_platform()
+ .text._Z48s3eNextpeerChangeCurrentPlayerAvatarUrl_platformPc
+                0x00002548       0x54 debug\s3eNextpeer_platform.os
+                0x00002548                s3eNextpeerChangeCurrentPlayerAvatarUrl_platform(char*)
+ .text._Z43s3eNextpeerChangeCurrentPlayerName_platformPc
+                0x0000259c       0x54 debug\s3eNextpeer_platform.os
+                0x0000259c                s3eNextpeerChangeCurrentPlayerName_platform(char*)
+ .text._Z40s3eNextpeerEnableRankingDisplay_platformb
+                0x000025f0       0x50 debug\s3eNextpeer_platform.os
+                0x000025f0                s3eNextpeerEnableRankingDisplay_platform(bool)
+ .text._Z43s3eNextpeerGetCurrentPlayerDetails_platformv
+                0x00002640       0x14 debug\s3eNextpeer_platform.os
+                0x00002640                s3eNextpeerGetCurrentPlayerDetails_platform()
+ .text._Z38s3eNextpeerGetNextpeerVersion_platformv
+                0x00002654       0x54 debug\s3eNextpeer_platform.os
+                0x00002654                s3eNextpeerGetNextpeerVersion_platform()
  .text._Z43s3eNextpeerIsCurrentlyInTournament_platformv
-                0x000026e8       0x54 debug\s3eNextpeer_platform.os
-                0x000026e8                s3eNextpeerIsCurrentlyInTournament_platform()
- .text._Z40s3eNextpeerTimeLeftInTournament_platformv
-                0x0000273c       0x54 debug\s3eNextpeer_platform.os
-                0x0000273c                s3eNextpeerTimeLeftInTournament_platform()
+                0x000026a8       0x64 debug\s3eNextpeer_platform.os
+                0x000026a8                s3eNextpeerIsCurrentlyInTournament_platform()
+ .text._Z41s3eNextpeerIsNextpeerInitialised_platformv
+                0x0000270c       0x64 debug\s3eNextpeer_platform.os
+                0x0000270c                s3eNextpeerIsNextpeerInitialised_platform()
+ .text._Z39s3eNextpeerIsNextpeerSupported_platformv
+                0x00002770       0x64 debug\s3eNextpeer_platform.os
+                0x00002770                s3eNextpeerIsNextpeerSupported_platform()
+ .text._Z35s3eNextpeerLaunchDashboard_platformv
+                0x000027d4       0x4c debug\s3eNextpeer_platform.os
+                0x000027d4                s3eNextpeerLaunchDashboard_platform()
+ .text._Z42s3eNextpeerPushDataToOtherPlayers_platformPvj
+                0x00002820       0x60 debug\s3eNextpeer_platform.os
+                0x00002820                s3eNextpeerPushDataToOtherPlayers_platform(void*, unsigned int)
+ .text._Z59s3eNextpeerReportControlledTournamentOverWithScore_platformj
+                0x00002880       0x54 debug\s3eNextpeer_platform.os
+                0x00002880                s3eNextpeerReportControlledTournamentOverWithScore_platform(unsigned int)
  .text._Z53s3eNextpeerReportForfeitForCurrentTournament_platformv
-                0x00002790       0x4c debug\s3eNextpeer_platform.os
-                0x00002790                s3eNextpeerReportForfeitForCurrentTournament_platform()
- .text._Z42s3eNextpeerPushDataToOtherPlayers_platformPKvj
-                0x000027dc       0x60 debug\s3eNextpeer_platform.os
-                0x000027dc                s3eNextpeerPushDataToOtherPlayers_platform(void const*, unsigned int)
- .text._Z50s3eNextpeerPushNotificationToOtherPlayers_platformPKc
-                0x0000283c       0x68 debug\s3eNextpeer_platform.os
-                0x0000283c                s3eNextpeerPushNotificationToOtherPlayers_platform(char const*)
- .text._Z33s3eNextpeerHandleOpenURL_platformPv
-                0x000028a4       0x54 debug\s3eNextpeer_platform.os
-                0x000028a4                s3eNextpeerHandleOpenURL_platform(void*)
- .text._Z43s3eNextpeerRegisterOpenURLCallback_platformv
-                0x000028f8       0x4c debug\s3eNextpeer_platform.os
-                0x000028f8                s3eNextpeerRegisterOpenURLCallback_platform()
- .text._Z52s3eNextpeerSetUnifiedVirtualCurrencySupport_platformh
-                0x00002944       0x50 debug\s3eNextpeer_platform.os
-                0x00002944                s3eNextpeerSetUnifiedVirtualCurrencySupport_platform(unsigned char)
- .text._Z28s3eNextpeerOpenFeed_platformv
-                0x00002994       0x4c debug\s3eNextpeer_platform.os
-                0x00002994                s3eNextpeerOpenFeed_platform()
- .text._Z36s3eNextpeerRegisterCallback_platform18s3eNextperCallbackPFiPvS0_ES0_
-                0x000029e0       0x6c debug\s3eNextpeer_platform.os
-                0x000029e0                s3eNextpeerRegisterCallback_platform(s3eNextperCallback, int (*)(void*, void*), void*)
- .text._Z38s3eNextpeerUnRegisterCallback_platform18s3eNextperCallbackPFiPvS0_E
-                0x00002a4c       0x60 debug\s3eNextpeer_platform.os
-                0x00002a4c                s3eNextpeerUnRegisterCallback_platform(s3eNextperCallback, int (*)(void*, void*))
+                0x000028d4       0x4c debug\s3eNextpeer_platform.os
+                0x000028d4                s3eNextpeerReportForfeitForCurrentTournament_platform()
+ .text._Z51s3eNextpeerReportScoreForCurrentTournament_platformj
+                0x00002920       0x54 debug\s3eNextpeer_platform.os
+                0x00002920                s3eNextpeerReportScoreForCurrentTournament_platform(unsigned int)
+ .text._Z41s3eNextpeerTimeLeftForTournament_platformv
+                0x00002974       0x54 debug\s3eNextpeer_platform.os
+                0x00002974                s3eNextpeerTimeLeftForTournament_platform()
+ .text._Z52s3eNextpeerUnreliablePushDataToOtherPlayers_platformPvj
+                0x000029c8       0x60 debug\s3eNextpeer_platform.os
+                0x000029c8                s3eNextpeerUnreliablePushDataToOtherPlayers_platform(void*, unsigned int)
  .text._Z15s3eNextpeerInitv
-                0x00002aac       0x14 debug\s3eNextpeer.os
-                0x00002aac                s3eNextpeerInit()
+                0x00002a28       0x14 debug\s3eNextpeer.os
+                0x00002a28                s3eNextpeerInit()
  .text._Z20s3eNextpeerTerminatev
+                0x00002a3c        0xc debug\s3eNextpeer.os
+                0x00002a3c                s3eNextpeerTerminate()
+ .text.s3eNextpeerChangeCurrentPlayerAvatarUrl
+                0x00002a48       0x1c debug\s3eNextpeer.os
+                0x00002a48                s3eNextpeerChangeCurrentPlayerAvatarUrl
+ .text.s3eNextpeerChangeCurrentPlayerName
+                0x00002a64       0x1c debug\s3eNextpeer.os
+                0x00002a64                s3eNextpeerChangeCurrentPlayerName
+ .text.s3eNextpeerEnableRankingDisplay
+                0x00002a80       0x24 debug\s3eNextpeer.os
+                0x00002a80                s3eNextpeerEnableRankingDisplay
+ .text.s3eNextpeerGetCurrentPlayerDetails
+                0x00002aa4       0x1c debug\s3eNextpeer.os
+                0x00002aa4                s3eNextpeerGetCurrentPlayerDetails
+ .text.s3eNextpeerGetNextpeerVersion
                 0x00002ac0        0xc debug\s3eNextpeer.os
-                0x00002ac0                s3eNextpeerTerminate()
- .text.s3eNextpeerInitWithProductKey
-                0x00002acc       0x1c debug\s3eNextpeer.os
-                0x00002acc                s3eNextpeerInitWithProductKey
- .text.s3eNextpeerLaunchDashboard
-                0x00002ae8        0xc debug\s3eNextpeer.os
-                0x00002ae8                s3eNextpeerLaunchDashboard
- .text.s3eNextpeerLaunchDashboardWithCurrencyAmount
-                0x00002af4       0x1c debug\s3eNextpeer.os
-                0x00002af4                s3eNextpeerLaunchDashboardWithCurrencyAmount
- .text.s3eNextpeerDismissDashboard
-                0x00002b10        0xc debug\s3eNextpeer.os
-                0x00002b10                s3eNextpeerDismissDashboard
- .text.s3eNextpeerShutDown
-                0x00002b1c        0xc debug\s3eNextpeer.os
-                0x00002b1c                s3eNextpeerShutDown
- .text.s3eNextpeerReportScoreForCurrentTournament
-                0x00002b28       0x1c debug\s3eNextpeer.os
-                0x00002b28                s3eNextpeerReportScoreForCurrentTournament
+                0x00002ac0                s3eNextpeerGetNextpeerVersion
  .text.s3eNextpeerIsCurrentlyInTournament
-                0x00002b44       0x14 debug\s3eNextpeer.os
-                0x00002b44                s3eNextpeerIsCurrentlyInTournament
- .text.s3eNextpeerTimeLeftInTournament
-                0x00002b58       0x14 debug\s3eNextpeer.os
-                0x00002b58                s3eNextpeerTimeLeftInTournament
- .text.s3eNextpeerReportForfeitForCurrentTournament
-                0x00002b6c        0xc debug\s3eNextpeer.os
-                0x00002b6c                s3eNextpeerReportForfeitForCurrentTournament
+                0x00002acc       0x14 debug\s3eNextpeer.os
+                0x00002acc                s3eNextpeerIsCurrentlyInTournament
+ .text.s3eNextpeerIsNextpeerInitialised
+                0x00002ae0       0x14 debug\s3eNextpeer.os
+                0x00002ae0                s3eNextpeerIsNextpeerInitialised
+ .text.s3eNextpeerIsNextpeerSupported
+                0x00002af4       0x14 debug\s3eNextpeer.os
+                0x00002af4                s3eNextpeerIsNextpeerSupported
+ .text.s3eNextpeerLaunchDashboard
+                0x00002b08        0xc debug\s3eNextpeer.os
+                0x00002b08                s3eNextpeerLaunchDashboard
  .text.s3eNextpeerPushDataToOtherPlayers
-                0x00002b78       0x24 debug\s3eNextpeer.os
-                0x00002b78                s3eNextpeerPushDataToOtherPlayers
- .text.s3eNextpeerPushNotificationToOtherPlayers
-                0x00002b9c       0x1c debug\s3eNextpeer.os
-                0x00002b9c                s3eNextpeerPushNotificationToOtherPlayers
- .text.s3eNextpeerHandleOpenURL
-                0x00002bb8       0x1c debug\s3eNextpeer.os
-                0x00002bb8                s3eNextpeerHandleOpenURL
- .text.s3eNextpeerRegisterOpenURLCallback
-                0x00002bd4        0xc debug\s3eNextpeer.os
-                0x00002bd4                s3eNextpeerRegisterOpenURLCallback
- .text.s3eNextpeerSetUnifiedVirtualCurrencySupport
-                0x00002be0       0x24 debug\s3eNextpeer.os
-                0x00002be0                s3eNextpeerSetUnifiedVirtualCurrencySupport
- .text.s3eNextpeerOpenFeed
-                0x00002c04        0xc debug\s3eNextpeer.os
-                0x00002c04                s3eNextpeerOpenFeed
- .text.s3eNextpeerRegisterCallback
-                0x00002c10       0x34 debug\s3eNextpeer.os
-                0x00002c10                s3eNextpeerRegisterCallback
- .text.s3eNextpeerUnRegisterCallback
-                0x00002c44       0x2c debug\s3eNextpeer.os
-                0x00002c44                s3eNextpeerUnRegisterCallback
- .text._ZL34s3eNextpeerInitWithProductKey_wrapPKc
-                0x00002c70       0x98 debug\s3eNextpeer_register.os
+                0x00002b14       0x24 debug\s3eNextpeer.os
+                0x00002b14                s3eNextpeerPushDataToOtherPlayers
+ .text.s3eNextpeerReportControlledTournamentOverWithScore
+                0x00002b38       0x1c debug\s3eNextpeer.os
+                0x00002b38                s3eNextpeerReportControlledTournamentOverWithScore
+ .text.s3eNextpeerReportForfeitForCurrentTournament
+                0x00002b54        0xc debug\s3eNextpeer.os
+                0x00002b54                s3eNextpeerReportForfeitForCurrentTournament
+ .text.s3eNextpeerReportScoreForCurrentTournament
+                0x00002b60       0x1c debug\s3eNextpeer.os
+                0x00002b60                s3eNextpeerReportScoreForCurrentTournament
+ .text.s3eNextpeerTimeLeftForTournament
+                0x00002b7c        0xc debug\s3eNextpeer.os
+                0x00002b7c                s3eNextpeerTimeLeftForTournament
+ .text.s3eNextpeerUnreliablePushDataToOtherPlayers
+                0x00002b88       0x24 debug\s3eNextpeer.os
+                0x00002b88                s3eNextpeerUnreliablePushDataToOtherPlayers
  .text._ZL31s3eNextpeerLaunchDashboard_wrapv
-                0x00002d08       0x88 debug\s3eNextpeer_register.os
- .text._ZL49s3eNextpeerLaunchDashboardWithCurrencyAmount_wrapj
-                0x00002d90       0x98 debug\s3eNextpeer_register.os
- .text._ZL32s3eNextpeerDismissDashboard_wrapv
-                0x00002e28       0x88 debug\s3eNextpeer_register.os
- .text._ZL24s3eNextpeerShutDown_wrapv
-                0x00002eb0       0x88 debug\s3eNextpeer_register.os
+                0x00002bac       0x88 debug\s3eNextpeer_register.os
+ .text.s3eNextpeerRegister
+                0x00002c34       0x50 debug\s3eNextpeer_register.os
+                0x00002c34                s3eNextpeerRegister
+ .text.s3eNextpeerUnRegister
+                0x00002c84       0x44 debug\s3eNextpeer_register.os
+                0x00002c84                s3eNextpeerUnRegister
  .text._Z22s3eNextpeerRegisterExtv
-                0x00002f38      0x194 debug\s3eNextpeer_register.os
-                0x00002f38                s3eNextpeerRegisterExt()
+                0x00002cc8      0x194 debug\s3eNextpeer_register.os
+                0x00002cc8                s3eNextpeerRegisterExt()
  .text.RegisterExt
-                0x000030cc        0xc debug\s3eNextpeer_register.os
-                0x000030cc                RegisterExt
+                0x00002e5c        0xc debug\s3eNextpeer_register.os
+                0x00002e5c                RegisterExt
  .text.IwDebugTraceSetTraceChannel
-                0x000030d8       0x1c C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
-                0x000030d8                IwDebugTraceSetTraceChannel
+                0x00002e68       0x1c C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
+                0x00002e68                IwDebugTraceSetTraceChannel
  .text._GLOBAL__I_E__JenkinsWS_workspace_ReleaseWin32FullBinaries_sdk_modules_iwcore_source_IwDebug.cpp
-                0x000030f4       0xa4 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
+                0x00002e84       0xa4 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
  .text.IwDebugTraceIsChannelOn
-                0x00003198      0x2b8 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
-                0x00003198                IwDebugTraceIsChannelOn
+                0x00002f28      0x2b8 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
+                0x00002f28                IwDebugTraceIsChannelOn
  .text.IwDebugTraceLinePrintf
-                0x00003450      0x10c C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
-                0x00003450                IwDebugTraceLinePrintf
+                0x000031e0      0x10c C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
+                0x000031e0                IwDebugTraceLinePrintf
  .text.s3eEdkThreadRunOnOS
-                0x0000355c       0x30 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
-                0x0000355c                s3eEdkThreadRunOnOS
- .text          0x0000358c       0x1c c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
-                0x0000358c                __aeabi_ldivmod
- .text          0x000035a8       0x88 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
-                0x000035a8                __gnu_uldivmod_helper
-                0x000035ec                __gnu_ldivmod_helper
- .text          0x00003630      0xec4 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
-                0x00004058                __gnu_Unwind_RaiseException
-                0x00003bb0                __aeabi_unwind_cpp_pr0
-                0x000036e0                _Unwind_GetCFA
-                0x0000367c                _Unwind_VRS_Set
-                0x00003df4                __gnu_Unwind_Backtrace
-                0x00004188                _Unwind_VRS_Pop
-                0x00003ba0                __aeabi_unwind_cpp_pr2
-                0x000036ec                _Unwind_DeleteException
-                0x000036e8                _Unwind_Complete
-                0x0000411c                __gnu_Unwind_Resume
-                0x00003fe4                __gnu_Unwind_ForcedUnwind
-                0x000040fc                __gnu_Unwind_Resume_or_Rethrow
-                0x00003630                _Unwind_VRS_Get
-                0x00003ba8                __aeabi_unwind_cpp_pr1
- .text          0x000044f4      0x1a8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
-                0x00004654                ___Unwind_ForcedUnwind
-                0x00004510                __gnu_Unwind_Save_VFP
-                0x00004630                _Unwind_Resume_or_Rethrow
-                0x00004630                ___Unwind_Resume_or_Rethrow
-                0x00004678                _Unwind_Backtrace
-                0x000044f4                __restore_core_regs
-                0x00004530                __gnu_Unwind_Save_VFP_D_16_to_31
-                0x00004520                __gnu_Unwind_Save_VFP_D
-                0x00004678                ___Unwind_Backtrace
-                0x000045e8                ___Unwind_RaiseException
-                0x0000460c                ___Unwind_Resume
-                0x00004538                __gnu_Unwind_Restore_WMMXD
-                0x00004508                __gnu_Unwind_Restore_VFP
-                0x0000460c                _Unwind_Resume
-                0x00004518                __gnu_Unwind_Restore_VFP_D
-                0x00004528                __gnu_Unwind_Restore_VFP_D_16_to_31
-                0x000045e8                _Unwind_RaiseException
-                0x000044f4                restore_core_regs
-                0x000045d4                __gnu_Unwind_Save_WMMXC
-                0x000045c0                __gnu_Unwind_Restore_WMMXC
-                0x00004654                _Unwind_ForcedUnwind
-                0x0000457c                __gnu_Unwind_Save_WMMXD
- .text          0x0000469c      0x484 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
-                0x0000473c                _Unwind_GetRegionStart
-                0x00004768                __gnu_unwind_execute
-                0x000046f4                _Unwind_GetTextRelBase
-                0x00004704                _Unwind_GetLanguageSpecificData
-                0x00004ae0                __gnu_unwind_frame
-                0x000046fc                _Unwind_GetDataRelBase
- .text          0x00004b20      0x47c c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
-                0x00004b20                __divdi3
- .text          0x00004f9c      0x40c c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
-                0x00004f9c                __udivdi3
- .text          0x000053a8       0xc4 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
-                0x000053a8                __udivsi3
-                0x000053a8                __aeabi_uidiv
-                0x00005454                __aeabi_uidivmod
- .text          0x0000546c       0x10 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
-                0x0000546c                __div0
+                0x000032ec       0x30 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+                0x000032ec                s3eEdkThreadRunOnOS
+ .text          0x0000331c       0x1c c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
+                0x0000331c                __aeabi_ldivmod
+ .text          0x00003338       0x88 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+                0x00003338                __gnu_uldivmod_helper
+                0x0000337c                __gnu_ldivmod_helper
+ .text          0x000033c0      0xec4 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+                0x00003de8                __gnu_Unwind_RaiseException
+                0x00003940                __aeabi_unwind_cpp_pr0
+                0x00003470                _Unwind_GetCFA
+                0x0000340c                _Unwind_VRS_Set
+                0x00003b84                __gnu_Unwind_Backtrace
+                0x00003f18                _Unwind_VRS_Pop
+                0x00003930                __aeabi_unwind_cpp_pr2
+                0x0000347c                _Unwind_DeleteException
+                0x00003478                _Unwind_Complete
+                0x00003eac                __gnu_Unwind_Resume
+                0x00003d74                __gnu_Unwind_ForcedUnwind
+                0x00003e8c                __gnu_Unwind_Resume_or_Rethrow
+                0x000033c0                _Unwind_VRS_Get
+                0x00003938                __aeabi_unwind_cpp_pr1
+ .text          0x00004284      0x1a8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
+                0x000043e4                ___Unwind_ForcedUnwind
+                0x000042a0                __gnu_Unwind_Save_VFP
+                0x000043c0                _Unwind_Resume_or_Rethrow
+                0x000043c0                ___Unwind_Resume_or_Rethrow
+                0x00004408                _Unwind_Backtrace
+                0x00004284                __restore_core_regs
+                0x000042c0                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x000042b0                __gnu_Unwind_Save_VFP_D
+                0x00004408                ___Unwind_Backtrace
+                0x00004378                ___Unwind_RaiseException
+                0x0000439c                ___Unwind_Resume
+                0x000042c8                __gnu_Unwind_Restore_WMMXD
+                0x00004298                __gnu_Unwind_Restore_VFP
+                0x0000439c                _Unwind_Resume
+                0x000042a8                __gnu_Unwind_Restore_VFP_D
+                0x000042b8                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00004378                _Unwind_RaiseException
+                0x00004284                restore_core_regs
+                0x00004364                __gnu_Unwind_Save_WMMXC
+                0x00004350                __gnu_Unwind_Restore_WMMXC
+                0x000043e4                _Unwind_ForcedUnwind
+                0x0000430c                __gnu_Unwind_Save_WMMXD
+ .text          0x0000442c      0x484 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+                0x000044cc                _Unwind_GetRegionStart
+                0x000044f8                __gnu_unwind_execute
+                0x00004484                _Unwind_GetTextRelBase
+                0x00004494                _Unwind_GetLanguageSpecificData
+                0x00004870                __gnu_unwind_frame
+                0x0000448c                _Unwind_GetDataRelBase
+ .text          0x000048b0      0x47c c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+                0x000048b0                __divdi3
+ .text          0x00004d2c      0x40c c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+                0x00004d2c                __udivdi3
+ .text          0x00005138       0xc4 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
+                0x00005138                __udivsi3
+                0x00005138                __aeabi_uidiv
+                0x000051e4                __aeabi_uidivmod
+ .text          0x000051fc       0x10 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
+                0x000051fc                __div0
  *(.gnu.warning)
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
@@ -564,35 +550,35 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .fini
  *(.fini)
-                0x0000547c                PROVIDE (__etext, .)
-                0x0000547c                PROVIDE (_etext, .)
-                0x0000547c                PROVIDE (etext, .)
+                0x0000520c                PROVIDE (__etext, .)
+                0x0000520c                PROVIDE (_etext, .)
+                0x0000520c                PROVIDE (etext, .)
 
-.rodata         0x0000547c      0x708
+.rodata         0x0000520c      0x5d8
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000547c      0x460 debug\s3eNextpeer_platform.os
- .rodata        0x000058dc      0x18c debug\s3eNextpeer_register.os
+ .rodata        0x0000520c      0x458 debug\s3eNextpeer_platform.os
+ .rodata        0x00005664       0x64 debug\s3eNextpeer_register.os
  .rodata.str1.4
-                0x00005a68      0x11c C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
+                0x000056c8      0x11c C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
                                 0x120 (size before relaxing)
 
 .rodata1
  *(.rodata1)
 
-.ARM.extab      0x00005b84       0x24
+.ARM.extab      0x000057e4       0x24
  *(.ARM.extab* .gnu.linkonce.armextab.*)
- .ARM.extab     0x00005b84       0x24 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
-                0x00005ba8                __exidx_start = .
+ .ARM.extab     0x000057e4       0x24 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+                0x00005808                __exidx_start = .
 
-.ARM.exidx      0x00005ba8      0x100
+.ARM.exidx      0x00005808      0x100
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00005ba8        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
- .ARM.exidx     0x00005bb0       0x10 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
- .ARM.exidx     0x00005bc0       0xa0 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
- .ARM.exidx     0x00005c60       0x38 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
- .ARM.exidx     0x00005c98        0x8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
- .ARM.exidx     0x00005ca0        0x8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
-                0x00005ca8                __exidx_end = .
+ .ARM.exidx     0x00005808        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .ARM.exidx     0x00005810       0x10 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+ .ARM.exidx     0x00005820       0xa0 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .ARM.exidx     0x000058c0       0x38 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+ .ARM.exidx     0x000058f8        0x8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+ .ARM.exidx     0x00005900        0x8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+                0x00005908                __exidx_end = .
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
@@ -602,7 +588,7 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .gcc_except_table
  *(.gcc_except_table .gcc_except_table.*)
-                0x00005ca8                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x00005908                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
                 0x00006dd0                . = (0x1000 DATA_SEGMENT_ALIGN 0x1000)
 
 .eh_frame
@@ -665,10 +651,10 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .got            0x00006f34       0xcc
  *(.got.plt)
- .got.plt       0x00006f34       0x64 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .got.plt       0x00006f34       0x6c C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x00006f34                _GLOBAL_OFFSET_TABLE_
  *(.got)
- .got           0x00006f98       0x68 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .got           0x00006fa0       0x60 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x00007000                . = (. DATA_SEGMENT_RELRO_END 0x0)
 
 .data           0x00007000       0x10
@@ -684,23 +670,23 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
                 0x00007010                __bss_start = .
                 0x00007010                __bss_start__ = .
 
-.bss            0x00007010     0x1a70
+.bss            0x00007010     0x1a68
  *(.dynbss)
  .dynbss        0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x00007010       0x48 debug\s3eNextpeer_platform.os
- .bss           0x00007058     0x1a28 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
-                0x00007058                g_DebugGlobals
+ .bss           0x00007010       0x40 debug\s3eNextpeer_platform.os
+ .bss           0x00007050     0x1a28 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(IwDebug.o)
+                0x00007050                g_DebugGlobals
  *(COMMON)
-                0x00008a80                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0x00008a80                _bss_end__ = .
-                0x00008a80                __bss_end__ = .
-                0x00008a80                . = ALIGN (0x4)
-                0x00008a80                . = ALIGN (0x4)
-                0x00008a80                __end__ = .
-                0x00008a80                _end = .
-                0x00008a80                PROVIDE (end, .)
-                0x00008a80                . = DATA_SEGMENT_END (.)
+                0x00008a78                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00008a78                _bss_end__ = .
+                0x00008a78                __bss_end__ = .
+                0x00008a78                . = ALIGN (0x4)
+                0x00008a78                . = ALIGN (0x4)
+                0x00008a78                __end__ = .
+                0x00008a78                _end = .
+                0x00008a78                PROVIDE (end, .)
+                0x00008a78                . = DATA_SEGMENT_END (.)
 
 .stab
  *(.stab)
@@ -745,139 +731,139 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x3a8
+.debug_aranges  0x00000000      0x378
  *(.debug_aranges)
  .debug_aranges
-                0x00000000      0x188 debug\s3eNextpeer_platform.os
+                0x00000000      0x178 debug\s3eNextpeer_platform.os
  .debug_aranges
-                0x00000188       0xb0 debug\s3eNextpeer.os
+                0x00000178       0xa0 debug\s3eNextpeer.os
  .debug_aranges
-                0x00000238       0x50 debug\s3eNextpeer_register.os
+                0x00000218       0x40 debug\s3eNextpeer_register.os
  .debug_aranges
-                0x00000288       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
+                0x00000258       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
  .debug_aranges
-                0x000002a8       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+                0x00000278       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
  .debug_aranges
-                0x000002c8       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+                0x00000298       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
  .debug_aranges
-                0x000002e8       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
+                0x000002b8       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
  .debug_aranges
-                0x00000308       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+                0x000002d8       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
  .debug_aranges
-                0x00000328       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+                0x000002f8       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
  .debug_aranges
-                0x00000348       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+                0x00000318       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
  .debug_aranges
-                0x00000368       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
+                0x00000338       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
  .debug_aranges
-                0x00000388       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
+                0x00000358       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
 
 .debug_pubnames
-                0x00000000      0xbce
+                0x00000000      0xbc4
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000      0x629 debug\s3eNextpeer_platform.os
+                0x00000000      0x604 debug\s3eNextpeer_platform.os
  .debug_pubnames
-                0x00000629      0x2b6 debug\s3eNextpeer.os
+                0x00000604      0x29f debug\s3eNextpeer.os
  .debug_pubnames
-                0x000008df       0x3d debug\s3eNextpeer_register.os
+                0x000008a3       0x6f debug\s3eNextpeer_register.os
  .debug_pubnames
-                0x0000091c       0x45 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+                0x00000912       0x45 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
  .debug_pubnames
-                0x00000961      0x177 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+                0x00000957      0x177 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
  .debug_pubnames
-                0x00000ad8       0xb7 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+                0x00000ace       0xb7 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
  .debug_pubnames
-                0x00000b8f       0x1f c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+                0x00000b85       0x1f c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
  .debug_pubnames
-                0x00000bae       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+                0x00000ba4       0x20 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
 
-.debug_info     0x00000000     0x92c0
+.debug_info     0x00000000     0x91f0
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000     0x6270 debug\s3eNextpeer_platform.os
- .debug_info    0x00006270      0x3ce debug\s3eNextpeer.os
- .debug_info    0x0000663e      0x195 debug\s3eNextpeer_register.os
- .debug_info    0x000067d3       0xf5 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
- .debug_info    0x000068c8       0xde c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
- .debug_info    0x000069a6     0x1424 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
- .debug_info    0x00007dca       0xf9 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
- .debug_info    0x00007ec3      0x636 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
- .debug_info    0x000084f9      0x606 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
- .debug_info    0x00008aff      0x5cb c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
- .debug_info    0x000090ca       0xfb c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
- .debug_info    0x000091c5       0xfb c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
+ .debug_info    0x00000000     0x61ab debug\s3eNextpeer_platform.os
+ .debug_info    0x000061ab      0x31e debug\s3eNextpeer.os
+ .debug_info    0x000064c9      0x23a debug\s3eNextpeer_register.os
+ .debug_info    0x00006703       0xf5 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
+ .debug_info    0x000067f8       0xde c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+ .debug_info    0x000068d6     0x1424 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .debug_info    0x00007cfa       0xf9 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
+ .debug_info    0x00007df3      0x636 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+ .debug_info    0x00008429      0x606 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+ .debug_info    0x00008a2f      0x5cb c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+ .debug_info    0x00008ffa       0xfb c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
+ .debug_info    0x000090f5       0xfb c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
 
-.debug_abbrev   0x00000000      0xe97
+.debug_abbrev   0x00000000      0xeb6
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x2f0 debug\s3eNextpeer_platform.os
- .debug_abbrev  0x000002f0      0x132 debug\s3eNextpeer.os
- .debug_abbrev  0x00000422       0xe8 debug\s3eNextpeer_register.os
- .debug_abbrev  0x0000050a       0x14 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
- .debug_abbrev  0x0000051e       0x6a c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
- .debug_abbrev  0x00000588      0x3bb c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
- .debug_abbrev  0x00000943       0x14 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
- .debug_abbrev  0x00000957      0x220 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
- .debug_abbrev  0x00000b77      0x18b c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
- .debug_abbrev  0x00000d02      0x16d c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
- .debug_abbrev  0x00000e6f       0x14 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
- .debug_abbrev  0x00000e83       0x14 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
+ .debug_abbrev  0x00000000      0x2eb debug\s3eNextpeer_platform.os
+ .debug_abbrev  0x000002eb      0x122 debug\s3eNextpeer.os
+ .debug_abbrev  0x0000040d      0x11c debug\s3eNextpeer_register.os
+ .debug_abbrev  0x00000529       0x14 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
+ .debug_abbrev  0x0000053d       0x6a c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+ .debug_abbrev  0x000005a7      0x3bb c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .debug_abbrev  0x00000962       0x14 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
+ .debug_abbrev  0x00000976      0x220 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+ .debug_abbrev  0x00000b96      0x18b c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+ .debug_abbrev  0x00000d21      0x16d c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x00000e8e       0x14 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x00000ea2       0x14 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
 
-.debug_line     0x00000000     0x15c2
+.debug_line     0x00000000     0x1547
  *(.debug_line)
- .debug_line    0x00000000      0x583 debug\s3eNextpeer_platform.os
- .debug_line    0x00000583      0x1f2 debug\s3eNextpeer.os
- .debug_line    0x00000775      0x13d debug\s3eNextpeer_register.os
- .debug_line    0x000008b2       0xa5 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
- .debug_line    0x00000957       0xab c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
- .debug_line    0x00000a02      0x4d2 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
- .debug_line    0x00000ed4       0xf1 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
- .debug_line    0x00000fc5      0x1d2 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
- .debug_line    0x00001197      0x162 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
- .debug_line    0x000012f9      0x152 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
- .debug_line    0x0000144b       0xcc c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
- .debug_line    0x00001517       0xab c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
+ .debug_line    0x00000000      0x549 debug\s3eNextpeer_platform.os
+ .debug_line    0x00000549      0x1ce debug\s3eNextpeer.os
+ .debug_line    0x00000717      0x120 debug\s3eNextpeer_register.os
+ .debug_line    0x00000837       0xa5 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_aeabi_ldivmod.o)
+ .debug_line    0x000008dc       0xab c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+ .debug_line    0x00000987      0x4d2 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .debug_line    0x00000e59       0xf1 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
+ .debug_line    0x00000f4a      0x1d2 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+ .debug_line    0x0000111c      0x162 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+ .debug_line    0x0000127e      0x152 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+ .debug_line    0x000013d0       0xcc c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
+ .debug_line    0x0000149c       0xab c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_dvmd_lnx.o)
 
-.debug_frame    0x00000000      0xc8c
+.debug_frame    0x00000000      0xbe4
  *(.debug_frame)
- .debug_frame   0x00000000      0x52c debug\s3eNextpeer_platform.os
- .debug_frame   0x0000052c      0x224 debug\s3eNextpeer.os
- .debug_frame   0x00000750       0xd8 debug\s3eNextpeer_register.os
- .debug_frame   0x00000828       0x60 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
- .debug_frame   0x00000888      0x248 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
- .debug_frame   0x00000ad0      0x108 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
- .debug_frame   0x00000bd8       0x44 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
- .debug_frame   0x00000c1c       0x48 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
- .debug_frame   0x00000c64       0x28 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000000      0x4f4 debug\s3eNextpeer_platform.os
+ .debug_frame   0x000004f4      0x1ec debug\s3eNextpeer.os
+ .debug_frame   0x000006e0       0xa0 debug\s3eNextpeer_register.os
+ .debug_frame   0x00000780       0x60 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+ .debug_frame   0x000007e0      0x248 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .debug_frame   0x00000a28      0x108 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+ .debug_frame   0x00000b30       0x44 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+ .debug_frame   0x00000b74       0x48 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+ .debug_frame   0x00000bbc       0x28 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivsi3.o)
 
-.debug_str      0x00000000     0x62b2
+.debug_str      0x00000000     0x6167
  *(.debug_str)
- .debug_str     0x00000000     0x555d debug\s3eNextpeer_platform.os
-                               0x56e2 (size before relaxing)
- .debug_str     0x0000555d       0xa4 debug\s3eNextpeer.os
-                                0x6a2 (size before relaxing)
- .debug_str     0x00005601      0x144 debug\s3eNextpeer_register.os
-                                0x27d (size before relaxing)
- .debug_str     0x00005745       0xb9 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+ .debug_str     0x00000000     0x5465 debug\s3eNextpeer_platform.os
+                               0x55e4 (size before relaxing)
+ .debug_str     0x00005465       0xa4 debug\s3eNextpeer.os
+                                0x470 (size before relaxing)
+ .debug_str     0x00005509       0xf6 debug\s3eNextpeer_register.os
+                                0x419 (size before relaxing)
+ .debug_str     0x000055ff       0xb9 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
                                  0xde (size before relaxing)
- .debug_str     0x000057fe      0x808 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .debug_str     0x000056b8      0x803 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
                                 0x8f4 (size before relaxing)
- .debug_str     0x00006006      0x13d c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+ .debug_str     0x00005ebb      0x13d c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
                                 0x45a (size before relaxing)
- .debug_str     0x00006143      0x165 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+ .debug_str     0x00005ff8      0x165 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
                                 0x215 (size before relaxing)
- .debug_str     0x000062a8        0xa c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+ .debug_str     0x0000615d        0xa c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
                                 0x216 (size before relaxing)
 
-.debug_loc      0x00000000     0x2c6a
+.debug_loc      0x00000000     0x2b86
  *(.debug_loc)
- .debug_loc     0x00000000      0x78c debug\s3eNextpeer_platform.os
- .debug_loc     0x0000078c      0x2cc debug\s3eNextpeer.os
- .debug_loc     0x00000a58      0x105 debug\s3eNextpeer_register.os
- .debug_loc     0x00000b5d      0x120 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
- .debug_loc     0x00000c7d      0xfef c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
- .debug_loc     0x00001c6c      0x2f9 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
- .debug_loc     0x00001f65      0x6cf c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
- .debug_loc     0x00002634      0x636 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+ .debug_loc     0x00000000      0x734 debug\s3eNextpeer_platform.os
+ .debug_loc     0x00000734      0x280 debug\s3eNextpeer.os
+ .debug_loc     0x000009b4       0xc5 debug\s3eNextpeer_register.os
+ .debug_loc     0x00000a79      0x120 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(bpabi.o)
+ .debug_loc     0x00000b99      0xfef c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .debug_loc     0x00001b88      0x2f9 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+ .debug_loc     0x00001e81      0x6cf c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+ .debug_loc     0x00002550      0x636 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -897,15 +883,15 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x5a8
+.debug_ranges   0x00000000      0x578
  *(.debug_ranges)
- .debug_ranges  0x00000000      0x178 debug\s3eNextpeer_platform.os
- .debug_ranges  0x00000178       0xa0 debug\s3eNextpeer.os
- .debug_ranges  0x00000218       0x40 debug\s3eNextpeer_register.os
- .debug_ranges  0x00000258      0x1f8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
- .debug_ranges  0x00000450       0x30 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
- .debug_ranges  0x00000480       0xa0 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
- .debug_ranges  0x00000520       0x88 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
+ .debug_ranges  0x00000000      0x168 debug\s3eNextpeer_platform.os
+ .debug_ranges  0x00000168       0x90 debug\s3eNextpeer.os
+ .debug_ranges  0x000001f8       0x30 debug\s3eNextpeer_register.os
+ .debug_ranges  0x00000228      0x1f8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .debug_ranges  0x00000420       0x30 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+ .debug_ranges  0x00000450       0xa0 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_divdi3.o)
+ .debug_ranges  0x000004f0       0x88 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(_udivdi3.o)
 
 .gnu.attributes
  *(.gnu.attributes)

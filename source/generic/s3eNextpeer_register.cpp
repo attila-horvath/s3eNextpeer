@@ -24,65 +24,47 @@ extern void s3eNextpeerTerminate();
 // code is oftern build standalone, outside the main loader build.
 #if defined I3D_OS_IPHONE || defined I3D_OS_OSX || defined I3D_OS_LINUX || defined I3D_OS_WINDOWS
 
-static void s3eNextpeerInitWithProductKey_wrap(const char* productKey)
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer func on main thread: s3eNextpeerInitWithProductKey"));
-    s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eNextpeerInitWithProductKey, 1, productKey);
-}
-
 static void s3eNextpeerLaunchDashboard_wrap()
 {
     IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer func on main thread: s3eNextpeerLaunchDashboard"));
     s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eNextpeerLaunchDashboard, 0);
 }
 
-static void s3eNextpeerLaunchDashboardWithCurrencyAmount_wrap(uint32 unifiedVirtualCurrencyAmount)
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer func on main thread: s3eNextpeerLaunchDashboardWithCurrencyAmount"));
-    s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eNextpeerLaunchDashboardWithCurrencyAmount, 1, unifiedVirtualCurrencyAmount);
-}
-
-static void s3eNextpeerDismissDashboard_wrap()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer func on main thread: s3eNextpeerDismissDashboard"));
-    s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eNextpeerDismissDashboard, 0);
-}
-
-static void s3eNextpeerShutDown_wrap()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer func on main thread: s3eNextpeerShutDown"));
-    s3eEdkThreadRunOnOS((s3eEdkThreadFunc)s3eNextpeerShutDown, 0);
-}
-
-#define s3eNextpeerInitWithProductKey s3eNextpeerInitWithProductKey_wrap
 #define s3eNextpeerLaunchDashboard s3eNextpeerLaunchDashboard_wrap
-#define s3eNextpeerLaunchDashboardWithCurrencyAmount s3eNextpeerLaunchDashboardWithCurrencyAmount_wrap
-#define s3eNextpeerDismissDashboard s3eNextpeerDismissDashboard_wrap
-#define s3eNextpeerShutDown s3eNextpeerShutDown_wrap
 
 #endif
+
+s3eResult s3eNextpeerRegister(s3eNextpeerCallback cbid, s3eCallback fn, void* pData)
+{
+    return s3eEdkCallbacksRegister(S3E_EXT_NEXTPEER_HASH, S3E_NEXTPEER_CALLBACK_MAX, cbid, fn, pData, 0);
+};
+
+s3eResult s3eNextpeerUnRegister(s3eNextpeerCallback cbid, s3eCallback fn)
+{
+    return s3eEdkCallbacksUnRegister(S3E_EXT_NEXTPEER_HASH, S3E_NEXTPEER_CALLBACK_MAX, cbid, fn);
+}
 
 void s3eNextpeerRegisterExt()
 {
     /* fill in the function pointer struct for this extension */
     void* funcPtrs[17];
-    funcPtrs[0] = (void*)s3eNextpeerInitWithProductKey;
-    funcPtrs[1] = (void*)s3eNextpeerLaunchDashboard;
-    funcPtrs[2] = (void*)s3eNextpeerLaunchDashboardWithCurrencyAmount;
-    funcPtrs[3] = (void*)s3eNextpeerDismissDashboard;
-    funcPtrs[4] = (void*)s3eNextpeerShutDown;
-    funcPtrs[5] = (void*)s3eNextpeerReportScoreForCurrentTournament;
-    funcPtrs[6] = (void*)s3eNextpeerIsCurrentlyInTournament;
-    funcPtrs[7] = (void*)s3eNextpeerTimeLeftInTournament;
-    funcPtrs[8] = (void*)s3eNextpeerReportForfeitForCurrentTournament;
-    funcPtrs[9] = (void*)s3eNextpeerPushDataToOtherPlayers;
-    funcPtrs[10] = (void*)s3eNextpeerPushNotificationToOtherPlayers;
-    funcPtrs[11] = (void*)s3eNextpeerHandleOpenURL;
-    funcPtrs[12] = (void*)s3eNextpeerRegisterOpenURLCallback;
-    funcPtrs[13] = (void*)s3eNextpeerSetUnifiedVirtualCurrencySupport;
-    funcPtrs[14] = (void*)s3eNextpeerOpenFeed;
-    funcPtrs[15] = (void*)s3eNextpeerRegisterCallback;
-    funcPtrs[16] = (void*)s3eNextpeerUnRegisterCallback;
+    funcPtrs[0] = (void*)s3eNextpeerRegister;
+    funcPtrs[1] = (void*)s3eNextpeerUnRegister;
+    funcPtrs[2] = (void*)s3eNextpeerChangeCurrentPlayerAvatarUrl;
+    funcPtrs[3] = (void*)s3eNextpeerChangeCurrentPlayerName;
+    funcPtrs[4] = (void*)s3eNextpeerEnableRankingDisplay;
+    funcPtrs[5] = (void*)s3eNextpeerGetCurrentPlayerDetails;
+    funcPtrs[6] = (void*)s3eNextpeerGetNextpeerVersion;
+    funcPtrs[7] = (void*)s3eNextpeerIsCurrentlyInTournament;
+    funcPtrs[8] = (void*)s3eNextpeerIsNextpeerInitialised;
+    funcPtrs[9] = (void*)s3eNextpeerIsNextpeerSupported;
+    funcPtrs[10] = (void*)s3eNextpeerLaunchDashboard;
+    funcPtrs[11] = (void*)s3eNextpeerPushDataToOtherPlayers;
+    funcPtrs[12] = (void*)s3eNextpeerReportControlledTournamentOverWithScore;
+    funcPtrs[13] = (void*)s3eNextpeerReportForfeitForCurrentTournament;
+    funcPtrs[14] = (void*)s3eNextpeerReportScoreForCurrentTournament;
+    funcPtrs[15] = (void*)s3eNextpeerTimeLeftForTournament;
+    funcPtrs[16] = (void*)s3eNextpeerUnreliablePushDataToOtherPlayers;
 
     /*
      * Flags that specify the extension's use of locking and stackswitching

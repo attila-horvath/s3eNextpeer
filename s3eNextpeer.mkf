@@ -36,12 +36,11 @@ if {{ not defined IW_MKF_IWCRT}}
 #lines will cause the extension builder to re-output this section.
 #Include the extension's jar file during deployment
 deployments
-{   
+{
     android-external-jars="lib/android/android-support-v4.jar"
     android-external-jars="lib/android/nextpeer_dist.jar"
     android-external-jars="lib/android/s3eNextpeer.jar"
     android-so="lib/android/libs3eNextpeer.so"
     android-external-res="res"
     android-custom-activity ='s3eNextpeerActivity'
-    
 }

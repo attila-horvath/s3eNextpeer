@@ -17,11 +17,13 @@ Discarded input sections
                 0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  _ZN7_JNIEnv11GetMethodIDEP7_jclassPKcS3_
                 0x00000000        0x0 release\s3eNextpeer_platform.os
- _ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
-                0x00000000        0x0 release\s3eNextpeer_platform.os
  _ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
                 0x00000000        0x0 release\s3eNextpeer_platform.os
+ _ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
+                0x00000000        0x0 release\s3eNextpeer_platform.os
  _ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
+                0x00000000        0x0 release\s3eNextpeer_platform.os
+ _ZN7_JNIEnv16CallObjectMethodEP8_jobjectP10_jmethodIDz
                 0x00000000        0x0 release\s3eNextpeer_platform.os
  _ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
                 0x00000000        0x0 release\s3eNextpeer_platform.os
@@ -98,55 +100,55 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 .note.gnu.build-id
  *(.note.gnu.build-id)
 
-.hash           0x000000f4      0x238
+.hash           0x000000f4      0x240
  *(.hash)
- .hash          0x000000f4      0x238 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .hash          0x000000f4      0x240 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
 .gnu.hash
  *(.gnu.hash)
 
-.dynsym         0x0000032c      0x490
+.dynsym         0x00000334      0x4b0
  *(.dynsym)
- .dynsym        0x0000032c      0x490 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .dynsym        0x00000334      0x4b0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.dynstr         0x000007bc      0x516
+.dynstr         0x000007e4      0x548
  *(.dynstr)
- .dynstr        0x000007bc      0x516 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .dynstr        0x000007e4      0x548 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.gnu.version    0x00000cd2        0x0
+.gnu.version    0x00000d2c        0x0
  *(.gnu.version)
  .gnu.version   0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.gnu.version_d  0x00000cd4        0x0 load address 0x00000cd2
+.gnu.version_d  0x00000d2c        0x0
  *(.gnu.version_d)
  .gnu.version_d
                 0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.gnu.version_r  0x00000cd4        0x0 load address 0x00000cd2
+.gnu.version_r  0x00000d2c        0x0
  *(.gnu.version_r)
  .gnu.version_r
                 0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.rel.dyn        0x00000cd4      0x1c8
+.rel.dyn        0x00000d2c      0x1b8
  *(.rel.init)
  *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
- .rel.text      0x00000cd4       0x10 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .rel.text      0x00000d2c       0x10 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.rel.fini)
  *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
  *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
  .rel.data.rel.ro
-                0x00000ce4       0xd8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00000d3c       0xd8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
- .rel.data      0x00000dbc        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .rel.data      0x00000e14        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
  *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
  *(.rel.ctors)
  *(.rel.dtors)
  *(.rel.got)
- .rel.got       0x00000dc4       0xd0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .rel.got       0x00000e1c       0xc0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
  .rel.fini_array
-                0x00000e94        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00000edc        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
 .rela.dyn
  *(.rela.init)
@@ -161,9 +163,9 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
  *(.rela.got)
  *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
 
-.rel.plt        0x00000e9c       0x60
+.rel.plt        0x00000ee4       0x70
  *(.rel.plt)
- .rel.plt       0x00000e9c       0x60 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .rel.plt       0x00000ee4       0x70 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
 .rela.plt
  *(.rela.plt)
@@ -171,233 +173,222 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 .init
  *(.init)
 
-.plt            0x00000efc       0xa4
+.plt            0x00000f54       0xbc
  *(.plt)
- .plt           0x00000efc       0xa4 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .plt           0x00000f54       0xbc C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
 
-.text           0x00000fa0     0x247c
+.text           0x00001010     0x2348
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x00000fa0       0x28 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
-                0x00000fb0                atexit
+ .text          0x00001010       0x28 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+                0x00001020                atexit
  .text._ZN7_JNIEnv11GetMethodIDEP7_jclassPKcS3_
-                0x00000fc8       0x14 release\s3eNextpeer_platform.os
-                0x00000fc8                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
+                0x00001038       0x14 release\s3eNextpeer_platform.os
+                0x00001038                _JNIEnv::GetMethodID(_jclass*, char const*, char const*)
  .text._Z22onNextpeerAppearCalledv
-                0x00000fdc        0x4 release\s3eNextpeer_platform.os
-                0x00000fdc                onNextpeerAppearCalled()
+                0x0000104c        0x4 release\s3eNextpeer_platform.os
+                0x0000104c                onNextpeerAppearCalled()
  .text._Z25onNextpeerDisappearCalledv
-                0x00000fe0        0x4 release\s3eNextpeer_platform.os
-                0x00000fe0                onNextpeerDisappearCalled()
+                0x00001050        0x4 release\s3eNextpeer_platform.os
+                0x00001050                onNextpeerDisappearCalled()
  .text._Z28onNextpeerReturnToGameCalledv
-                0x00000fe4        0x4 release\s3eNextpeer_platform.os
-                0x00000fe4                onNextpeerReturnToGameCalled()
+                0x00001054        0x4 release\s3eNextpeer_platform.os
+                0x00001054                onNextpeerReturnToGameCalled()
  .text._Z26onSupportsTournamentCalledv
-                0x00000fe8        0x4 release\s3eNextpeer_platform.os
-                0x00000fe8                onSupportsTournamentCalled()
+                0x00001058        0x4 release\s3eNextpeer_platform.os
+                0x00001058                onSupportsTournamentCalled()
  .text._Z23onTournamentStartCalledv
-                0x00000fec        0x4 release\s3eNextpeer_platform.os
-                0x00000fec                onTournamentStartCalled()
+                0x0000105c        0x4 release\s3eNextpeer_platform.os
+                0x0000105c                onTournamentStartCalled()
  .text._Z21onTournamentEndCalledv
-                0x00000ff0        0x4 release\s3eNextpeer_platform.os
-                0x00000ff0                onTournamentEndCalled()
+                0x00001060        0x4 release\s3eNextpeer_platform.os
+                0x00001060                onTournamentEndCalled()
  .text._Z38onReceiveTournamentCustomMessageCalledv
-                0x00000ff4        0x4 release\s3eNextpeer_platform.os
-                0x00000ff4                onReceiveTournamentCustomMessageCalled()
+                0x00001064        0x4 release\s3eNextpeer_platform.os
+                0x00001064                onReceiveTournamentCustomMessageCalled()
  .text._Z48onReceiveUnreliableTournamentCustomMessageCalledv
-                0x00000ff8        0x4 release\s3eNextpeer_platform.os
-                0x00000ff8                onReceiveUnreliableTournamentCustomMessageCalled()
+                0x00001068        0x4 release\s3eNextpeer_platform.os
+                0x00001068                onReceiveUnreliableTournamentCustomMessageCalled()
  .text._Z29s3eNextpeerTerminate_platformv
-                0x00000ffc        0x4 release\s3eNextpeer_platform.os
-                0x00000ffc                s3eNextpeerTerminate_platform()
- .text._ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
-                0x00001000       0x34 release\s3eNextpeer_platform.os
-                0x00001000                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
+                0x0000106c        0x4 release\s3eNextpeer_platform.os
+                0x0000106c                s3eNextpeerTerminate_platform()
+ .text._Z43s3eNextpeerGetCurrentPlayerDetails_platformv
+                0x00001070        0x4 release\s3eNextpeer_platform.os
+                0x00001070                s3eNextpeerGetCurrentPlayerDetails_platform()
  .text._ZN7_JNIEnv14CallVoidMethodEP8_jobjectP10_jmethodIDz
-                0x00001034       0x34 release\s3eNextpeer_platform.os
-                0x00001034                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+                0x00001074       0x34 release\s3eNextpeer_platform.os
+                0x00001074                _JNIEnv::CallVoidMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv13CallIntMethodEP8_jobjectP10_jmethodIDz
+                0x000010a8       0x34 release\s3eNextpeer_platform.os
+                0x000010a8                _JNIEnv::CallIntMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv17CallBooleanMethodEP8_jobjectP10_jmethodIDz
-                0x00001068       0x34 release\s3eNextpeer_platform.os
-                0x00001068                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
+                0x000010dc       0x34 release\s3eNextpeer_platform.os
+                0x000010dc                _JNIEnv::CallBooleanMethod(_jobject*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv16CallObjectMethodEP8_jobjectP10_jmethodIDz
+                0x00001110       0x34 release\s3eNextpeer_platform.os
+                0x00001110                _JNIEnv::CallObjectMethod(_jobject*, _jmethodID*, ...)
  .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
-                0x0000109c       0x34 release\s3eNextpeer_platform.os
-                0x0000109c                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+                0x00001144       0x34 release\s3eNextpeer_platform.os
+                0x00001144                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
  .text._Z31onReceiveTournamentStatusCalledP7_JNIEnvP8_jobjectS2_
-                0x000010d0       0x48 release\s3eNextpeer_platform.os
-                0x000010d0                onReceiveTournamentStatusCalled(_JNIEnv*, _jobject*, _jobject*)
- .text._Z38s3eNextpeerUnRegisterCallback_platform18s3eNextperCallbackPFiPvS0_E
-                0x00001118       0x5c release\s3eNextpeer_platform.os
-                0x00001118                s3eNextpeerUnRegisterCallback_platform(s3eNextperCallback, int (*)(void*, void*))
- .text._Z36s3eNextpeerRegisterCallback_platform18s3eNextperCallbackPFiPvS0_ES0_
-                0x00001174       0x68 release\s3eNextpeer_platform.os
-                0x00001174                s3eNextpeerRegisterCallback_platform(s3eNextperCallback, int (*)(void*, void*), void*)
- .text._Z40s3eNextpeerTimeLeftInTournament_platformv
-                0x000011dc       0x50 release\s3eNextpeer_platform.os
-                0x000011dc                s3eNextpeerTimeLeftInTournament_platform()
- .text._Z28s3eNextpeerOpenFeed_platformv
-                0x0000122c       0x50 release\s3eNextpeer_platform.os
-                0x0000122c                s3eNextpeerOpenFeed_platform()
- .text._Z52s3eNextpeerSetUnifiedVirtualCurrencySupport_platformh
-                0x0000127c       0x58 release\s3eNextpeer_platform.os
-                0x0000127c                s3eNextpeerSetUnifiedVirtualCurrencySupport_platform(unsigned char)
- .text._Z43s3eNextpeerRegisterOpenURLCallback_platformv
-                0x000012d4       0x50 release\s3eNextpeer_platform.os
-                0x000012d4                s3eNextpeerRegisterOpenURLCallback_platform()
- .text._Z33s3eNextpeerHandleOpenURL_platformPv
-                0x00001324       0x58 release\s3eNextpeer_platform.os
-                0x00001324                s3eNextpeerHandleOpenURL_platform(void*)
- .text._Z42s3eNextpeerPushDataToOtherPlayers_platformPKvj
-                0x0000137c       0x60 release\s3eNextpeer_platform.os
-                0x0000137c                s3eNextpeerPushDataToOtherPlayers_platform(void const*, unsigned int)
- .text._Z53s3eNextpeerReportForfeitForCurrentTournament_platformv
-                0x000013dc       0x50 release\s3eNextpeer_platform.os
-                0x000013dc                s3eNextpeerReportForfeitForCurrentTournament_platform()
- .text._Z28s3eNextpeerShutDown_platformv
-                0x0000142c       0x50 release\s3eNextpeer_platform.os
-                0x0000142c                s3eNextpeerShutDown_platform()
+                0x00001178       0x48 release\s3eNextpeer_platform.os
+                0x00001178                onReceiveTournamentStatusCalled(_JNIEnv*, _jobject*, _jobject*)
+ .text._Z52s3eNextpeerUnreliablePushDataToOtherPlayers_platformPvj
+                0x000011c0       0x5c release\s3eNextpeer_platform.os
+                0x000011c0                s3eNextpeerUnreliablePushDataToOtherPlayers_platform(void*, unsigned int)
+ .text._Z43s3eNextpeerChangeCurrentPlayerName_platformPc
+                0x0000121c       0x58 release\s3eNextpeer_platform.os
+                0x0000121c                s3eNextpeerChangeCurrentPlayerName_platform(char*)
+ .text._Z48s3eNextpeerChangeCurrentPlayerAvatarUrl_platformPc
+                0x00001274       0x58 release\s3eNextpeer_platform.os
+                0x00001274                s3eNextpeerChangeCurrentPlayerAvatarUrl_platform(char*)
+ .text._Z38s3eNextpeerGetNextpeerVersion_platformv
+                0x000012cc       0x50 release\s3eNextpeer_platform.os
+                0x000012cc                s3eNextpeerGetNextpeerVersion_platform()
+ .text._Z59s3eNextpeerReportControlledTournamentOverWithScore_platformj
+                0x0000131c       0x58 release\s3eNextpeer_platform.os
+                0x0000131c                s3eNextpeerReportControlledTournamentOverWithScore_platform(unsigned int)
+ .text._Z42s3eNextpeerPushDataToOtherPlayers_platformPvj
+                0x00001374       0x60 release\s3eNextpeer_platform.os
+                0x00001374                s3eNextpeerPushDataToOtherPlayers_platform(void*, unsigned int)
+ .text._Z35s3eNextpeerLaunchDashboard_platformv
+                0x000013d4       0x50 release\s3eNextpeer_platform.os
+                0x000013d4                s3eNextpeerLaunchDashboard_platform()
+ .text._Z40s3eNextpeerEnableRankingDisplay_platformb
+                0x00001424       0x58 release\s3eNextpeer_platform.os
+                0x00001424                s3eNextpeerEnableRankingDisplay_platform(bool)
  .text._Z51s3eNextpeerReportScoreForCurrentTournament_platformj
                 0x0000147c       0x58 release\s3eNextpeer_platform.os
                 0x0000147c                s3eNextpeerReportScoreForCurrentTournament_platform(unsigned int)
- .text._Z36s3eNextpeerDismissDashboard_platformv
+ .text._Z53s3eNextpeerReportForfeitForCurrentTournament_platformv
                 0x000014d4       0x50 release\s3eNextpeer_platform.os
-                0x000014d4                s3eNextpeerDismissDashboard_platform()
- .text._Z35s3eNextpeerLaunchDashboard_platformv
+                0x000014d4                s3eNextpeerReportForfeitForCurrentTournament_platform()
+ .text._Z41s3eNextpeerTimeLeftForTournament_platformv
                 0x00001524       0x50 release\s3eNextpeer_platform.os
-                0x00001524                s3eNextpeerLaunchDashboard_platform()
+                0x00001524                s3eNextpeerTimeLeftForTournament_platform()
+ .text._Z39s3eNextpeerIsNextpeerSupported_platformv
+                0x00001574       0x58 release\s3eNextpeer_platform.os
+                0x00001574                s3eNextpeerIsNextpeerSupported_platform()
+ .text._Z41s3eNextpeerIsNextpeerInitialised_platformv
+                0x000015cc       0x58 release\s3eNextpeer_platform.os
+                0x000015cc                s3eNextpeerIsNextpeerInitialised_platform()
  .text._Z43s3eNextpeerIsCurrentlyInTournament_platformv
-                0x00001574       0x50 release\s3eNextpeer_platform.os
-                0x00001574                s3eNextpeerIsCurrentlyInTournament_platform()
- .text._Z53s3eNextpeerLaunchDashboardWithCurrencyAmount_platformj
-                0x000015c4       0x58 release\s3eNextpeer_platform.os
-                0x000015c4                s3eNextpeerLaunchDashboardWithCurrencyAmount_platform(unsigned int)
- .text._Z50s3eNextpeerPushNotificationToOtherPlayers_platformPKc
-                0x0000161c       0x70 release\s3eNextpeer_platform.os
-                0x0000161c                s3eNextpeerPushNotificationToOtherPlayers_platform(char const*)
- .text._Z38s3eNextpeerInitWithProductKey_platformPKc
-                0x0000168c       0x70 release\s3eNextpeer_platform.os
-                0x0000168c                s3eNextpeerInitWithProductKey_platform(char const*)
+                0x00001624       0x58 release\s3eNextpeer_platform.os
+                0x00001624                s3eNextpeerIsCurrentlyInTournament_platform()
  .text._ZL27s3eEdkAndroidFindClass_realPKc
-                0x000016fc       0xb8 release\s3eNextpeer_platform.os
+                0x0000167c       0xb8 release\s3eNextpeer_platform.os
  .text._Z24s3eNextpeerInit_platformv
-                0x000017b4      0x4c0 release\s3eNextpeer_platform.os
-                0x000017b4                s3eNextpeerInit_platform()
- .text.s3eNextpeerUnRegisterCallback
-                0x00001c74        0x4 release\s3eNextpeer.os
-                0x00001c74                s3eNextpeerUnRegisterCallback
- .text.s3eNextpeerRegisterCallback
-                0x00001c78        0x4 release\s3eNextpeer.os
-                0x00001c78                s3eNextpeerRegisterCallback
- .text.s3eNextpeerOpenFeed
-                0x00001c7c        0x4 release\s3eNextpeer.os
-                0x00001c7c                s3eNextpeerOpenFeed
- .text.s3eNextpeerSetUnifiedVirtualCurrencySupport
-                0x00001c80        0x4 release\s3eNextpeer.os
-                0x00001c80                s3eNextpeerSetUnifiedVirtualCurrencySupport
- .text.s3eNextpeerRegisterOpenURLCallback
-                0x00001c84        0x4 release\s3eNextpeer.os
-                0x00001c84                s3eNextpeerRegisterOpenURLCallback
- .text.s3eNextpeerHandleOpenURL
-                0x00001c88        0x4 release\s3eNextpeer.os
-                0x00001c88                s3eNextpeerHandleOpenURL
- .text.s3eNextpeerPushNotificationToOtherPlayers
-                0x00001c8c        0x4 release\s3eNextpeer.os
-                0x00001c8c                s3eNextpeerPushNotificationToOtherPlayers
- .text.s3eNextpeerPushDataToOtherPlayers
-                0x00001c90        0x4 release\s3eNextpeer.os
-                0x00001c90                s3eNextpeerPushDataToOtherPlayers
- .text.s3eNextpeerReportForfeitForCurrentTournament
-                0x00001c94        0x4 release\s3eNextpeer.os
-                0x00001c94                s3eNextpeerReportForfeitForCurrentTournament
- .text.s3eNextpeerTimeLeftInTournament
-                0x00001c98        0x4 release\s3eNextpeer.os
-                0x00001c98                s3eNextpeerTimeLeftInTournament
- .text.s3eNextpeerIsCurrentlyInTournament
-                0x00001c9c        0x4 release\s3eNextpeer.os
-                0x00001c9c                s3eNextpeerIsCurrentlyInTournament
+                0x00001734      0x464 release\s3eNextpeer_platform.os
+                0x00001734                s3eNextpeerInit_platform()
+ .text.s3eNextpeerUnreliablePushDataToOtherPlayers
+                0x00001b98        0x4 release\s3eNextpeer.os
+                0x00001b98                s3eNextpeerUnreliablePushDataToOtherPlayers
+ .text.s3eNextpeerTimeLeftForTournament
+                0x00001b9c        0x4 release\s3eNextpeer.os
+                0x00001b9c                s3eNextpeerTimeLeftForTournament
  .text.s3eNextpeerReportScoreForCurrentTournament
-                0x00001ca0        0x4 release\s3eNextpeer.os
-                0x00001ca0                s3eNextpeerReportScoreForCurrentTournament
- .text.s3eNextpeerShutDown
-                0x00001ca4        0x4 release\s3eNextpeer.os
-                0x00001ca4                s3eNextpeerShutDown
- .text.s3eNextpeerDismissDashboard
-                0x00001ca8        0x4 release\s3eNextpeer.os
-                0x00001ca8                s3eNextpeerDismissDashboard
- .text.s3eNextpeerLaunchDashboardWithCurrencyAmount
-                0x00001cac        0x4 release\s3eNextpeer.os
-                0x00001cac                s3eNextpeerLaunchDashboardWithCurrencyAmount
+                0x00001ba0        0x4 release\s3eNextpeer.os
+                0x00001ba0                s3eNextpeerReportScoreForCurrentTournament
+ .text.s3eNextpeerReportForfeitForCurrentTournament
+                0x00001ba4        0x4 release\s3eNextpeer.os
+                0x00001ba4                s3eNextpeerReportForfeitForCurrentTournament
+ .text.s3eNextpeerReportControlledTournamentOverWithScore
+                0x00001ba8        0x4 release\s3eNextpeer.os
+                0x00001ba8                s3eNextpeerReportControlledTournamentOverWithScore
+ .text.s3eNextpeerPushDataToOtherPlayers
+                0x00001bac        0x4 release\s3eNextpeer.os
+                0x00001bac                s3eNextpeerPushDataToOtherPlayers
  .text.s3eNextpeerLaunchDashboard
-                0x00001cb0        0x4 release\s3eNextpeer.os
-                0x00001cb0                s3eNextpeerLaunchDashboard
- .text.s3eNextpeerInitWithProductKey
-                0x00001cb4        0x4 release\s3eNextpeer.os
-                0x00001cb4                s3eNextpeerInitWithProductKey
+                0x00001bb0        0x4 release\s3eNextpeer.os
+                0x00001bb0                s3eNextpeerLaunchDashboard
+ .text.s3eNextpeerIsNextpeerSupported
+                0x00001bb4        0x4 release\s3eNextpeer.os
+                0x00001bb4                s3eNextpeerIsNextpeerSupported
+ .text.s3eNextpeerIsNextpeerInitialised
+                0x00001bb8        0x4 release\s3eNextpeer.os
+                0x00001bb8                s3eNextpeerIsNextpeerInitialised
+ .text.s3eNextpeerIsCurrentlyInTournament
+                0x00001bbc        0x4 release\s3eNextpeer.os
+                0x00001bbc                s3eNextpeerIsCurrentlyInTournament
+ .text.s3eNextpeerGetNextpeerVersion
+                0x00001bc0        0x4 release\s3eNextpeer.os
+                0x00001bc0                s3eNextpeerGetNextpeerVersion
+ .text.s3eNextpeerGetCurrentPlayerDetails
+                0x00001bc4       0x18 release\s3eNextpeer.os
+                0x00001bc4                s3eNextpeerGetCurrentPlayerDetails
+ .text.s3eNextpeerEnableRankingDisplay
+                0x00001bdc        0x4 release\s3eNextpeer.os
+                0x00001bdc                s3eNextpeerEnableRankingDisplay
+ .text.s3eNextpeerChangeCurrentPlayerName
+                0x00001be0        0x4 release\s3eNextpeer.os
+                0x00001be0                s3eNextpeerChangeCurrentPlayerName
+ .text.s3eNextpeerChangeCurrentPlayerAvatarUrl
+                0x00001be4        0x4 release\s3eNextpeer.os
+                0x00001be4                s3eNextpeerChangeCurrentPlayerAvatarUrl
  .text._Z20s3eNextpeerTerminatev
-                0x00001cb8        0x4 release\s3eNextpeer.os
-                0x00001cb8                s3eNextpeerTerminate()
+                0x00001be8        0x4 release\s3eNextpeer.os
+                0x00001be8                s3eNextpeerTerminate()
  .text._Z15s3eNextpeerInitv
-                0x00001cbc        0x4 release\s3eNextpeer.os
-                0x00001cbc                s3eNextpeerInit()
- .text._ZL24s3eNextpeerShutDown_wrapv
-                0x00001cc0       0x14 release\s3eNextpeer_register.os
- .text._ZL32s3eNextpeerDismissDashboard_wrapv
-                0x00001cd4       0x14 release\s3eNextpeer_register.os
- .text._ZL49s3eNextpeerLaunchDashboardWithCurrencyAmount_wrapj
-                0x00001ce8       0x18 release\s3eNextpeer_register.os
+                0x00001bec        0x4 release\s3eNextpeer.os
+                0x00001bec                s3eNextpeerInit()
  .text._ZL31s3eNextpeerLaunchDashboard_wrapv
-                0x00001d00       0x14 release\s3eNextpeer_register.os
- .text._ZL34s3eNextpeerInitWithProductKey_wrapPKc
-                0x00001d14       0x18 release\s3eNextpeer_register.os
+                0x00001bf0       0x14 release\s3eNextpeer_register.os
+ .text.s3eNextpeerUnRegister
+                0x00001c04       0x30 release\s3eNextpeer_register.os
+                0x00001c04                s3eNextpeerUnRegister
+ .text.s3eNextpeerRegister
+                0x00001c34       0x34 release\s3eNextpeer_register.os
+                0x00001c34                s3eNextpeerRegister
  .text.RegisterExt
-                0x00001d2c      0x1d0 release\s3eNextpeer_register.os
-                0x00001d2c                RegisterExt
+                0x00001c68      0x1d0 release\s3eNextpeer_register.os
+                0x00001c68                RegisterExt
  .text.s3eEdkThreadRunOnOS
-                0x00001efc       0x30 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
-                0x00001efc                s3eEdkThreadRunOnOS
- .text          0x00001f2c      0xec4 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
-                0x00002954                __gnu_Unwind_RaiseException
-                0x000024ac                __aeabi_unwind_cpp_pr0
-                0x00001fdc                _Unwind_GetCFA
-                0x00001f78                _Unwind_VRS_Set
-                0x000026f0                __gnu_Unwind_Backtrace
-                0x00002a84                _Unwind_VRS_Pop
-                0x0000249c                __aeabi_unwind_cpp_pr2
-                0x00001fe8                _Unwind_DeleteException
-                0x00001fe4                _Unwind_Complete
-                0x00002a18                __gnu_Unwind_Resume
-                0x000028e0                __gnu_Unwind_ForcedUnwind
-                0x000029f8                __gnu_Unwind_Resume_or_Rethrow
-                0x00001f2c                _Unwind_VRS_Get
-                0x000024a4                __aeabi_unwind_cpp_pr1
- .text          0x00002df0      0x1a8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
-                0x00002f50                ___Unwind_ForcedUnwind
-                0x00002e0c                __gnu_Unwind_Save_VFP
-                0x00002f2c                _Unwind_Resume_or_Rethrow
-                0x00002f2c                ___Unwind_Resume_or_Rethrow
-                0x00002f74                _Unwind_Backtrace
-                0x00002df0                __restore_core_regs
-                0x00002e2c                __gnu_Unwind_Save_VFP_D_16_to_31
-                0x00002e1c                __gnu_Unwind_Save_VFP_D
-                0x00002f74                ___Unwind_Backtrace
-                0x00002ee4                ___Unwind_RaiseException
-                0x00002f08                ___Unwind_Resume
-                0x00002e34                __gnu_Unwind_Restore_WMMXD
-                0x00002e04                __gnu_Unwind_Restore_VFP
-                0x00002f08                _Unwind_Resume
-                0x00002e14                __gnu_Unwind_Restore_VFP_D
-                0x00002e24                __gnu_Unwind_Restore_VFP_D_16_to_31
-                0x00002ee4                _Unwind_RaiseException
-                0x00002df0                restore_core_regs
-                0x00002ed0                __gnu_Unwind_Save_WMMXC
-                0x00002ebc                __gnu_Unwind_Restore_WMMXC
-                0x00002f50                _Unwind_ForcedUnwind
-                0x00002e78                __gnu_Unwind_Save_WMMXD
- .text          0x00002f98      0x484 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
-                0x00003038                _Unwind_GetRegionStart
-                0x00003064                __gnu_unwind_execute
-                0x00002ff0                _Unwind_GetTextRelBase
-                0x00003000                _Unwind_GetLanguageSpecificData
-                0x000033dc                __gnu_unwind_frame
-                0x00002ff8                _Unwind_GetDataRelBase
+                0x00001e38       0x30 C:\Marmalade\7.2\s3e\edk\lib\android\libedk.a(edk_helpers.o)
+                0x00001e38                s3eEdkThreadRunOnOS
+ .text          0x00001e68      0xec4 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+                0x00002890                __gnu_Unwind_RaiseException
+                0x000023e8                __aeabi_unwind_cpp_pr0
+                0x00001f18                _Unwind_GetCFA
+                0x00001eb4                _Unwind_VRS_Set
+                0x0000262c                __gnu_Unwind_Backtrace
+                0x000029c0                _Unwind_VRS_Pop
+                0x000023d8                __aeabi_unwind_cpp_pr2
+                0x00001f24                _Unwind_DeleteException
+                0x00001f20                _Unwind_Complete
+                0x00002954                __gnu_Unwind_Resume
+                0x0000281c                __gnu_Unwind_ForcedUnwind
+                0x00002934                __gnu_Unwind_Resume_or_Rethrow
+                0x00001e68                _Unwind_VRS_Get
+                0x000023e0                __aeabi_unwind_cpp_pr1
+ .text          0x00002d2c      0x1a8 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(libunwind.o)
+                0x00002e8c                ___Unwind_ForcedUnwind
+                0x00002d48                __gnu_Unwind_Save_VFP
+                0x00002e68                _Unwind_Resume_or_Rethrow
+                0x00002e68                ___Unwind_Resume_or_Rethrow
+                0x00002eb0                _Unwind_Backtrace
+                0x00002d2c                __restore_core_regs
+                0x00002d68                __gnu_Unwind_Save_VFP_D_16_to_31
+                0x00002d58                __gnu_Unwind_Save_VFP_D
+                0x00002eb0                ___Unwind_Backtrace
+                0x00002e20                ___Unwind_RaiseException
+                0x00002e44                ___Unwind_Resume
+                0x00002d70                __gnu_Unwind_Restore_WMMXD
+                0x00002d40                __gnu_Unwind_Restore_VFP
+                0x00002e44                _Unwind_Resume
+                0x00002d50                __gnu_Unwind_Restore_VFP_D
+                0x00002d60                __gnu_Unwind_Restore_VFP_D_16_to_31
+                0x00002e20                _Unwind_RaiseException
+                0x00002d2c                restore_core_regs
+                0x00002e0c                __gnu_Unwind_Save_WMMXC
+                0x00002df8                __gnu_Unwind_Restore_WMMXC
+                0x00002e8c                _Unwind_ForcedUnwind
+                0x00002db4                __gnu_Unwind_Save_WMMXD
+ .text          0x00002ed4      0x484 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+                0x00002f74                _Unwind_GetRegionStart
+                0x00002fa0                __gnu_unwind_execute
+                0x00002f2c                _Unwind_GetTextRelBase
+                0x00002f3c                _Unwind_GetLanguageSpecificData
+                0x00003318                __gnu_unwind_frame
+                0x00002f34                _Unwind_GetDataRelBase
  *(.gnu.warning)
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
@@ -410,31 +401,31 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .fini
  *(.fini)
-                0x0000341c                PROVIDE (__etext, .)
-                0x0000341c                PROVIDE (_etext, .)
-                0x0000341c                PROVIDE (etext, .)
+                0x00003358                PROVIDE (__etext, .)
+                0x00003358                PROVIDE (_etext, .)
+                0x00003358                PROVIDE (etext, .)
 
-.rodata         0x0000341c      0x410
+.rodata         0x00003358      0x408
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x0000341c      0x410 release\s3eNextpeer_platform.os
+                0x00003358      0x408 release\s3eNextpeer_platform.os
  .rodata.str1.4
                 0x00000000        0xc release\s3eNextpeer_register.os
 
 .rodata1
  *(.rodata1)
 
-.ARM.extab      0x0000382c       0x24
+.ARM.extab      0x00003760       0x24
  *(.ARM.extab* .gnu.linkonce.armextab.*)
- .ARM.extab     0x0000382c       0x24 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
-                0x00003850                __exidx_start = .
+ .ARM.extab     0x00003760       0x24 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+                0x00003784                __exidx_start = .
 
-.ARM.exidx      0x00003850       0xe0
+.ARM.exidx      0x00003784       0xe0
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00003850        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
- .ARM.exidx     0x00003858       0xa0 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
- .ARM.exidx     0x000038f8       0x38 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
-                0x00003930                __exidx_end = .
+ .ARM.exidx     0x00003784        0x8 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .ARM.exidx     0x0000378c       0xa0 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(unwind-arm.o)
+ .ARM.exidx     0x0000382c       0x38 c:/android-ndk-r8b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/windows/bin/../lib/gcc/arm-linux-androideabi/4.4.3\libgcc.a(pr-support.o)
+                0x00003864                __exidx_end = .
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
@@ -444,7 +435,7 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .gcc_except_table
  *(.gcc_except_table .gcc_except_table.*)
-                0x00003930                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x00003864                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
                 0x00004dfc                . = (0x1000 DATA_SEGMENT_ALIGN 0x1000)
 
 .eh_frame
@@ -506,10 +497,10 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
 
 .got            0x00004f5c       0xa4
  *(.got.plt)
- .got.plt       0x00004f5c       0x3c C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .got.plt       0x00004f5c       0x44 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x00004f5c                _GLOBAL_OFFSET_TABLE_
  *(.got)
- .got           0x00004f98       0x68 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
+ .got           0x00004fa0       0x60 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
                 0x00005000                . = (. DATA_SEGMENT_RELRO_END 0x0)
 
 .data           0x00005000       0x10
@@ -525,21 +516,21 @@ LOAD C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtend_so.o
                 0x00005010                __bss_start = .
                 0x00005010                __bss_start__ = .
 
-.bss            0x00005010       0x48
+.bss            0x00005010       0x40
  *(.dynbss)
  .dynbss        0x00000000        0x0 C:/android-ndk-r8b/platforms/android-9/arch-arm/usr/lib/crtbegin_so.o
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x00005010       0x48 release\s3eNextpeer_platform.os
+ .bss           0x00005010       0x40 release\s3eNextpeer_platform.os
  *(COMMON)
-                0x00005058                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0x00005058                _bss_end__ = .
-                0x00005058                __bss_end__ = .
-                0x00005058                . = ALIGN (0x4)
-                0x00005058                . = ALIGN (0x4)
-                0x00005058                __end__ = .
-                0x00005058                _end = .
-                0x00005058                PROVIDE (end, .)
-                0x00005058                . = DATA_SEGMENT_END (.)
+                0x00005050                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00005050                _bss_end__ = .
+                0x00005050                __bss_end__ = .
+                0x00005050                . = ALIGN (0x4)
+                0x00005050                . = ALIGN (0x4)
+                0x00005050                __end__ = .
+                0x00005050                _end = .
+                0x00005050                PROVIDE (end, .)
+                0x00005050                . = DATA_SEGMENT_END (.)
 
 .stab
  *(.stab)

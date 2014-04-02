@@ -21,47 +21,78 @@
 #define S3E_NEXTPEER_STRING_MAX_1 50
 #define S3E_NEXTPEER_STRING_MAX_2 150
 
-/**
- * Enumeration for various callbacks in the s3eNextpeer extension
- */
-typedef enum s3eNextperCallback
+
+typedef enum s3eNextpeerCallback
 {
-    S3E_NEXTPEER_CALLBACK_DID_TOURNAMENT_START,
-    S3E_NEXTPEER_CALLBACK_DID_TOURNAMENT_END,
-    S3E_NEXTPEER_CALLBACK_DASHBOARD_WILL_APPEAR,
-    S3E_NEXTPEER_CALLBACK_DASHBOARD_DID_APPEAR,
-    S3E_NEXTPEER_CALLBACK_DASHBOARD_WILL_DISAPPEAR,
-    S3E_NEXTPEER_CALLBACK_DASHBOARD_DID_DISAPPEAR,
-    S3E_NEXTPEER_CALLBACK_DASHBOARD_RETURN_TO_GAME,
-    S3E_NEXTPEER_CALLBACK_WILL_TOURNAMENT_START,
-    S3E_NEXTPEER_CALLBACK_DID_RECEIVE_CUSTOM_MESSAGE,
-    S3E_NEXTPEER_CALLBACK_OPEN_URL_CALLED,
-    S3E_NEXTPEER_CALLBACK_VCURRENCY_ADD_CURRENCY_AMOUNT,
+    S3E_NEXTPEER_CALLBACK_NEXTPEER_DID_APPEAR,
+    S3E_NEXTPEER_CALLBACK_NEXTPEER_DID_DISAPPEAR,
+    S3E_NEXTPEER_CALLBACK_NEXTPEER_RETURNED_TO_GAME,
+    S3E_NEXTPEER_CALLBACK_RECEIVED_TOURNAMENT_CUSTOM_MESSAGE,
+    S3E_NEXTPEER_CALLBACK_RECEIVED_TOURNAMENT_STATUS,
+    S3E_NEXTPEER_CALLBACK_RECEIVED_UNRELIABLE_TOURNAMENT_CUSTOM_MESSAGE,
+    S3E_NEXTPEER_CALLBACK_GAME_SUPPORTS_TOURNAMENT,
+    S3E_NEXTPEER_CALLBACK_TOURNAMENT_ENDS,
+    S3E_NEXTPEER_CALLBACK_TOURNAMENT_STARTS,
     S3E_NEXTPEER_CALLBACK_MAX
-} s3eNextperCallback;
+} s3eNextpeerCallback;
+
+typedef struct s3eNextpeerTournamentPlayer{
+
+   const char* m_playerId;
+   const char* m_playerImageUrl;
+   bool m_playerIsBot;
+   const char* m_playerName;
+   
+}s3eNextpeerTournamentPlayer;
+typedef struct s3eNextpeerTournamentCustomMessage{
+
+	const char* m_playerID; 
+    const char* m_playerName;
+    const char* m_playerImageUrl;
+	void* m_messageData; 
+    uint32 m_mesageDataLen;
+    bool playerIsBot;
+    
+} s3eNextpeerTournamentCustomMessage;
+
+typedef struct s3eNextpeerTournamentEndData {
+
+    s3eNextpeerTournamentPlayer m_currentPlayer;
+    s3eNextpeerTournamentPlayer** m_opponents;  //todoooooooooooooooooooo
+    uint32 m_tournamentTotalPlayers;
+    const char* m_tournamentUuid;
+    
+}s3eNextpeerTournamentEndData;
 
 
-/**
- * Structure to hold tournament info for callbacks. For now holds only the UUID and the time.
- * 
- * @see s3eNextpeerTournamentStartCallback
- */
-typedef struct s3eNextpeerTournamentStartData {
-	char* m_tournamentUuid; // Tournament UUID
-	int m_tournamentSeconds; // Tournament time in seconds
+
+typedef struct s3eNextpeerTournamentPlayerResult{
+
+    bool m_didForfeit;
+    bool m_isStillPlaying;
+    s3eNextpeerTournamentPlayer* m_player;
+    uint32 m_score;
+
+}s3eNextpeerTournamentPlayerResult;
+
+typedef struct s3eNextpeerTournamentStartData{
+
+    s3eNextpeerTournamentPlayer* m_currentPlayer;
+    uint32 m_numberOfPlayers;
+    s3eNextpeerTournamentPlayer** m_opponents;   //todooooooooooooooooooooo
+    bool m_tournamentIsGameControlled;
+    const char* m_tournamentName;
+    uint32 m_tournamentRandomSeed;
+    uint32 m_tournamentTimeSeconds;
+    const char* m_tournamentUuid;
+    
 } s3eNextpeerTournamentStartData;
 
-/**
- * Structure to hold custom message data for callbacks
- * 
- */
-typedef struct s3eNextpeerCustomMessageData {
-	char* m_playerName; // Sender's name
-    void* m_playerImageData; // Sender's image data
-    uint32 m_playerImageDataLen; // Sender's image data length
-	void* m_dataReceived; // Data being sent
-    uint32 m_dataReceivedLen; // Data length
-} s3eNextpeerCustomMessageData;
+typedef struct s3eNextpeerTournamentStatusInfo{
+    
+    s3eNextpeerTournamentPlayerResult** m_sortedResults;   //todoooooooooooo
+
+}s3eNextpeerTournamentStatusInfo;
 // \cond HIDDEN_DEFINES
 S3E_BEGIN_C_DECL
 // \endcond
@@ -71,39 +102,66 @@ S3E_BEGIN_C_DECL
  */
 s3eBool s3eNextpeerAvailable();
 
-void s3eNextpeerInitWithProductKey(const char* productKey);
+/**
+ * Registers a callback to be called for an operating system event.
+ *
+ * The available callback types are listed in @ref s3eNextpeerCallback.
+ * @param cbid ID of the event for which to register.
+ * @param fn callback function.
+ * @param userdata Value to pass to the @e userdata parameter of @e NotifyFunc.
+ * @return
+ *  - @ref S3E_RESULT_SUCCESS if no error occurred.
+ *  - @ref S3E_RESULT_ERROR if the operation failed.\n
+ *
+ * @see s3eNextpeerUnRegister
+ * @note For more information on the system data passed as a parameter to the callback
+ * registered using this function, see the @ref s3eNextpeerCallback enum.
+ */
+s3eResult s3eNextpeerRegister(s3eNextpeerCallback cbid, s3eCallback fn, void* userData);
+
+/**
+ * Unregister a callback for a given event.
+ * @param cbid ID of the callback for which to register.
+ * @param fn Callback Function.
+ * @return
+ * - @ref S3E_RESULT_SUCCESS if no error occurred.
+ * - @ref S3E_RESULT_ERROR if the operation failed.\n
+ * @note For more information on the systemData passed as a parameter to the callback
+ * registered using this function, see the s3eNextpeerCallback enum.
+ * @note It is not necessary to define a return value for any registered callback.
+ * @see s3eNextpeerRegister
+ */
+s3eResult s3eNextpeerUnRegister(s3eNextpeerCallback cbid, s3eCallback fn);
+
+void s3eNextpeerChangeCurrentPlayerAvatarUrl(char* Url);
+
+void s3eNextpeerChangeCurrentPlayerName(char* name);
+
+void s3eNextpeerEnableRankingDisplay(bool enableRankingDisplay);
+
+s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails();
+
+const char* s3eNextpeerGetNextpeerVersion();
+
+bool s3eNextpeerIsCurrentlyInTournament();
+
+bool s3eNextpeerIsNextpeerInitialised();
+
+bool s3eNextpeerIsNextpeerSupported();
 
 void s3eNextpeerLaunchDashboard();
 
-void s3eNextpeerLaunchDashboardWithCurrencyAmount(uint32 unifiedVirtualCurrencyAmount);
+void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 length);
 
-void s3eNextpeerDismissDashboard();
-
-void s3eNextpeerShutDown();
-
-void s3eNextpeerReportScoreForCurrentTournament(uint32 score);
-
-s3eBool s3eNextpeerIsCurrentlyInTournament();
-
-uint32 s3eNextpeerTimeLeftInTournament();
+void s3eNextpeerReportControlledTournamentOverWithScore(uint32 score);
 
 void s3eNextpeerReportForfeitForCurrentTournament();
 
-void s3eNextpeerPushDataToOtherPlayers(const void* data, uint32 length);
+void s3eNextpeerReportScoreForCurrentTournament(uint32 score);
 
-void s3eNextpeerPushNotificationToOtherPlayers(const char * notice);
+uint32 s3eNextpeerTimeLeftForTournament();
 
-void s3eNextpeerHandleOpenURL(void* url);
-
-void s3eNextpeerRegisterOpenURLCallback();
-
-void s3eNextpeerSetUnifiedVirtualCurrencySupport(s3eBool unifiedVirtualCurrencySupported);
-
-void s3eNextpeerOpenFeed();
-
-s3eResult s3eNextpeerRegisterCallback(s3eNextperCallback cbid, s3eCallback fn, void* pData);
-
-s3eResult s3eNextpeerUnRegisterCallback(s3eNextperCallback cbid, s3eCallback fn);
+void s3eNextpeerUnreliablePushDataToOtherPlayers(void* data, uint32 length);
 
 S3E_END_C_DECL
 

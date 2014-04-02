@@ -14,25 +14,21 @@
 #include "IwDebug.h"
 
 static jobject g_Obj;
-static jmethodID g_s3eNextpeerInitWithProductKey;
-static jmethodID g_s3eNextpeerLaunchDashboard;
-static jmethodID g_s3eNextpeerLaunchDashboardWithCurrencyAmount;
-static jmethodID g_s3eNextpeerDismissDashboard;
-static jmethodID g_s3eNextpeerShutDown;
-static jmethodID g_s3eNextpeerReportScoreForCurrentTournament;
+static jmethodID g_s3eNextpeerChangeCurrentPlayerAvatarUrl;
+static jmethodID g_s3eNextpeerChangeCurrentPlayerName;
+static jmethodID g_s3eNextpeerEnableRankingDisplay;
+static jmethodID g_s3eNextpeerGetCurrentPlayerDetails;
+static jmethodID g_s3eNextpeerGetNextpeerVersion;
 static jmethodID g_s3eNextpeerIsCurrentlyInTournament;
-static jmethodID g_s3eNextpeerTimeLeftInTournament;
-static jmethodID g_s3eNextpeerReportForfeitForCurrentTournament;
+static jmethodID g_s3eNextpeerIsNextpeerInitialised;
+static jmethodID g_s3eNextpeerIsNextpeerSupported;
+static jmethodID g_s3eNextpeerLaunchDashboard;
 static jmethodID g_s3eNextpeerPushDataToOtherPlayers;
-static jmethodID g_s3eNextpeerPushNotificationToOtherPlayers;
-static jmethodID g_s3eNextpeerHandleOpenURL;
-static jmethodID g_s3eNextpeerRegisterOpenURLCallback;
-static jmethodID g_s3eNextpeerSetUnifiedVirtualCurrencySupport;
-static jmethodID g_s3eNextpeerOpenFeed;
-static jmethodID g_s3eNextpeerRegisterCallback;
-static jmethodID g_s3eNextpeerUnRegisterCallback;
-
-
+static jmethodID g_s3eNextpeerReportControlledTournamentOverWithScore;
+static jmethodID g_s3eNextpeerReportForfeitForCurrentTournament;
+static jmethodID g_s3eNextpeerReportScoreForCurrentTournament;
+static jmethodID g_s3eNextpeerTimeLeftForTournament;
+static jmethodID g_s3eNextpeerUnreliablePushDataToOtherPlayers;
 void onNextpeerAppearCalled()
 {
 	IwTrace(NEXTPEER, ("onNextpeerAppearCalled"));
@@ -52,7 +48,7 @@ void onReceiveTournamentStatusCalled(JNIEnv *env, jobject _this, jobject tournam
 	
 	void* statusObject = (void*)tournamentStatus;
 	s3eResult res = S3E_RESULT_SUCCESS;
-	s3eEdkCallbacksEnqueue(S3E_EXT_NEXTPEER_HASH, S3E_NEXTPEER_CALLBACK_DID_TOURNAMENT_START,&res,4,statusObject,S3E_TRUE);
+	s3eEdkCallbacksEnqueue(S3E_EXT_NEXTPEER_HASH,S3E_NEXTPEER_CALLBACK_RECEIVED_TOURNAMENT_STATUS,&res,4,statusObject,S3E_TRUE);
 }
 void onSupportsTournamentCalled()
 {
@@ -74,13 +70,13 @@ void onReceiveUnreliableTournamentCustomMessageCalled()
 {
 	IwTrace(NEXTPEER, ("onReceiveUnreliableTournamentCustomMessageCalled"));
 }
+
 s3eResult s3eNextpeerInit_platform()
 {
     // Get the environment from the pointer
     JNIEnv* env = s3eEdkJNIGetEnv();
     jobject obj = NULL;
     jmethodID cons = NULL;
-	
 	static const JNINativeMethod g_JNIthreadMethods[] =
     {
        
@@ -97,8 +93,7 @@ s3eResult s3eNextpeerInit_platform()
 
     // Get the extension class
     jclass cls = s3eEdkAndroidFindClass("s3eNextpeer");
-    
-	jclass cls1 = s3eEdkAndroidFindClass("com/ideaworks3d/marmalade/s3eNextpeerApplication");
+    jclass cls1 = s3eEdkAndroidFindClass("com/ideaworks3d/marmalade/s3eNextpeerApplication");
     if (!cls1||!cls)
         goto fail;	
 
@@ -113,76 +108,66 @@ s3eResult s3eNextpeerInit_platform()
         goto fail;
 
     // Get all the extension methods
-    g_s3eNextpeerInitWithProductKey = env->GetMethodID(cls, "s3eNextpeerInitWithProductKey", "(Ljava/lang/String;)V");
-    if (!g_s3eNextpeerInitWithProductKey)
+    g_s3eNextpeerChangeCurrentPlayerAvatarUrl = env->GetMethodID(cls, "s3eNextpeerChangeCurrentPlayerAvatarUrl", "(Ljava/lang/String;)V");
+    if (!g_s3eNextpeerChangeCurrentPlayerAvatarUrl)
         goto fail;
 
-    g_s3eNextpeerLaunchDashboard = env->GetMethodID(cls, "s3eNextpeerLaunchDashboard", "()V");
-    if (!g_s3eNextpeerLaunchDashboard)
+    g_s3eNextpeerChangeCurrentPlayerName = env->GetMethodID(cls, "s3eNextpeerChangeCurrentPlayerName", "(Ljava/lang/String;)V");
+    if (!g_s3eNextpeerChangeCurrentPlayerName)
         goto fail;
 
-    g_s3eNextpeerLaunchDashboardWithCurrencyAmount = env->GetMethodID(cls, "s3eNextpeerLaunchDashboardWithCurrencyAmount", "(I)V");
-    if (!g_s3eNextpeerLaunchDashboardWithCurrencyAmount)
+    g_s3eNextpeerEnableRankingDisplay = env->GetMethodID(cls, "s3eNextpeerEnableRankingDisplay", "(Z)V");
+    if (!g_s3eNextpeerEnableRankingDisplay)
         goto fail;
 
-    g_s3eNextpeerDismissDashboard = env->GetMethodID(cls, "s3eNextpeerDismissDashboard", "()V");
-    if (!g_s3eNextpeerDismissDashboard)
+    g_s3eNextpeerGetCurrentPlayerDetails = env->GetMethodID(cls, "s3eNextpeerGetCurrentPlayerDetails", "()I");
+    if (!g_s3eNextpeerGetCurrentPlayerDetails)
         goto fail;
 
-    g_s3eNextpeerShutDown = env->GetMethodID(cls, "s3eNextpeerShutDown", "()V");
-    if (!g_s3eNextpeerShutDown)
-        goto fail;
-
-    g_s3eNextpeerReportScoreForCurrentTournament = env->GetMethodID(cls, "s3eNextpeerReportScoreForCurrentTournament", "(I)V");
-    if (!g_s3eNextpeerReportScoreForCurrentTournament)
+    g_s3eNextpeerGetNextpeerVersion = env->GetMethodID(cls, "s3eNextpeerGetNextpeerVersion", "()Ljava/lang/String;");
+    if (!g_s3eNextpeerGetNextpeerVersion)
         goto fail;
 
     g_s3eNextpeerIsCurrentlyInTournament = env->GetMethodID(cls, "s3eNextpeerIsCurrentlyInTournament", "()Z");
     if (!g_s3eNextpeerIsCurrentlyInTournament)
         goto fail;
 
-    g_s3eNextpeerTimeLeftInTournament = env->GetMethodID(cls, "s3eNextpeerTimeLeftInTournament", "()I");
-    if (!g_s3eNextpeerTimeLeftInTournament)
+    g_s3eNextpeerIsNextpeerInitialised = env->GetMethodID(cls, "s3eNextpeerIsNextpeerInitialised", "()Z");
+    if (!g_s3eNextpeerIsNextpeerInitialised)
+        goto fail;
+
+    g_s3eNextpeerIsNextpeerSupported = env->GetMethodID(cls, "s3eNextpeerIsNextpeerSupported", "()Z");
+    if (!g_s3eNextpeerIsNextpeerSupported)
+        goto fail;
+
+    g_s3eNextpeerLaunchDashboard = env->GetMethodID(cls, "s3eNextpeerLaunchDashboard", "()V");
+    if (!g_s3eNextpeerLaunchDashboard)
+        goto fail;
+
+    g_s3eNextpeerPushDataToOtherPlayers = env->GetMethodID(cls, "s3eNextpeerPushDataToOtherPlayers", "([BI)V");
+    if (!g_s3eNextpeerPushDataToOtherPlayers)
+        goto fail;
+
+    g_s3eNextpeerReportControlledTournamentOverWithScore = env->GetMethodID(cls, "s3eNextpeerReportControlledTournamentOverWithScore", "(I)V");
+    if (!g_s3eNextpeerReportControlledTournamentOverWithScore)
         goto fail;
 
     g_s3eNextpeerReportForfeitForCurrentTournament = env->GetMethodID(cls, "s3eNextpeerReportForfeitForCurrentTournament", "()V");
     if (!g_s3eNextpeerReportForfeitForCurrentTournament)
         goto fail;
 
-    g_s3eNextpeerPushDataToOtherPlayers = env->GetMethodID(cls, "s3eNextpeerPushDataToOtherPlayers", "(II)V");
-    if (!g_s3eNextpeerPushDataToOtherPlayers)
+    g_s3eNextpeerReportScoreForCurrentTournament = env->GetMethodID(cls, "s3eNextpeerReportScoreForCurrentTournament", "(I)V");
+    if (!g_s3eNextpeerReportScoreForCurrentTournament)
         goto fail;
 
-    g_s3eNextpeerPushNotificationToOtherPlayers = env->GetMethodID(cls, "s3eNextpeerPushNotificationToOtherPlayers", "(Ljava/lang/String;)V");
-    if (!g_s3eNextpeerPushNotificationToOtherPlayers)
+    g_s3eNextpeerTimeLeftForTournament = env->GetMethodID(cls, "s3eNextpeerTimeLeftForTournament", "()I");
+    if (!g_s3eNextpeerTimeLeftForTournament)
         goto fail;
 
-    g_s3eNextpeerHandleOpenURL = env->GetMethodID(cls, "s3eNextpeerHandleOpenURL", "(I)V");
-    if (!g_s3eNextpeerHandleOpenURL)
+    g_s3eNextpeerUnreliablePushDataToOtherPlayers = env->GetMethodID(cls, "s3eNextpeerUnreliablePushDataToOtherPlayers", "([BI)V");
+    if (!g_s3eNextpeerUnreliablePushDataToOtherPlayers)
         goto fail;
-
-    g_s3eNextpeerRegisterOpenURLCallback = env->GetMethodID(cls, "s3eNextpeerRegisterOpenURLCallback", "()V");
-    if (!g_s3eNextpeerRegisterOpenURLCallback)
-        goto fail;
-
-    g_s3eNextpeerSetUnifiedVirtualCurrencySupport = env->GetMethodID(cls, "s3eNextpeerSetUnifiedVirtualCurrencySupport", "(Z)V");
-    if (!g_s3eNextpeerSetUnifiedVirtualCurrencySupport)
-        goto fail;
-
-    g_s3eNextpeerOpenFeed = env->GetMethodID(cls, "s3eNextpeerOpenFeed", "()V");
-    if (!g_s3eNextpeerOpenFeed)
-        goto fail;
-
-    g_s3eNextpeerRegisterCallback = env->GetMethodID(cls, "s3eNextpeerRegisterCallback", "(III)I");
-    if (!g_s3eNextpeerRegisterCallback)
-        goto fail;
-
-    g_s3eNextpeerUnRegisterCallback = env->GetMethodID(cls, "s3eNextpeerUnRegisterCallback", "(II)I");
-    if (!g_s3eNextpeerUnRegisterCallback)
-        goto fail;
-	
-    env->RegisterNatives(cls1, g_JNIthreadMethods, sizeof(g_JNIthreadMethods)/sizeof(g_JNIthreadMethods[0]));
-	
+	env->RegisterNatives(cls1, g_JNIthreadMethods, sizeof(g_JNIthreadMethods)/sizeof(g_JNIthreadMethods[0]));
 
 
 
@@ -211,11 +196,54 @@ void s3eNextpeerTerminate_platform()
     // Add any platform-specific termination code here
 }
 
-void s3eNextpeerInitWithProductKey_platform(const char* productKey)
+void s3eNextpeerChangeCurrentPlayerAvatarUrl_platform(char* Url)
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
-    jstring productKey_jstr = env->NewStringUTF(productKey);
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerInitWithProductKey, productKey_jstr);
+    env->CallVoidMethod(g_Obj, g_s3eNextpeerChangeCurrentPlayerAvatarUrl, Url);
+}
+
+void s3eNextpeerChangeCurrentPlayerName_platform(char* name)
+{
+    JNIEnv* env = s3eEdkJNIGetEnv();
+    env->CallVoidMethod(g_Obj, g_s3eNextpeerChangeCurrentPlayerName, name);
+}
+
+void s3eNextpeerEnableRankingDisplay_platform(bool enableRankingDisplay)
+{
+    JNIEnv* env = s3eEdkJNIGetEnv();
+    env->CallVoidMethod(g_Obj, g_s3eNextpeerEnableRankingDisplay, enableRankingDisplay);
+}
+
+s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails_platform()
+{
+	s3eNextpeerTournamentPlayer thisone;
+    //JNIEnv* env = s3eEdkJNIGetEnv();
+   // return (s3eNextpeerTournamentPlayer) env->CallIntMethod(g_Obj, g_s3eNextpeerGetCurrentPlayerDetails);
+   return thisone ;
+}
+
+const char* s3eNextpeerGetNextpeerVersion_platform()
+{
+    JNIEnv* env = s3eEdkJNIGetEnv();
+    return (const char*)env->CallObjectMethod(g_Obj, g_s3eNextpeerGetNextpeerVersion);
+}
+
+bool s3eNextpeerIsCurrentlyInTournament_platform()
+{
+    JNIEnv* env = s3eEdkJNIGetEnv();
+    return (bool)env->CallBooleanMethod(g_Obj, g_s3eNextpeerIsCurrentlyInTournament);
+}
+
+bool s3eNextpeerIsNextpeerInitialised_platform()
+{
+    JNIEnv* env = s3eEdkJNIGetEnv();
+    return (bool)env->CallBooleanMethod(g_Obj, g_s3eNextpeerIsNextpeerInitialised);
+}
+
+bool s3eNextpeerIsNextpeerSupported_platform()
+{
+    JNIEnv* env = s3eEdkJNIGetEnv();
+    return (bool)env->CallBooleanMethod(g_Obj, g_s3eNextpeerIsNextpeerSupported);
 }
 
 void s3eNextpeerLaunchDashboard_platform()
@@ -224,40 +252,16 @@ void s3eNextpeerLaunchDashboard_platform()
     env->CallVoidMethod(g_Obj, g_s3eNextpeerLaunchDashboard);
 }
 
-void s3eNextpeerLaunchDashboardWithCurrencyAmount_platform(uint32 unifiedVirtualCurrencyAmount)
+void s3eNextpeerPushDataToOtherPlayers_platform(void* data, uint32 length)
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerLaunchDashboardWithCurrencyAmount, unifiedVirtualCurrencyAmount);
+    env->CallVoidMethod(g_Obj, g_s3eNextpeerPushDataToOtherPlayers, data, length);
 }
 
-void s3eNextpeerDismissDashboard_platform()
+void s3eNextpeerReportControlledTournamentOverWithScore_platform(uint32 score)
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerDismissDashboard);
-}
-
-void s3eNextpeerShutDown_platform()
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerShutDown);
-}
-
-void s3eNextpeerReportScoreForCurrentTournament_platform(uint32 score)
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerReportScoreForCurrentTournament, score);
-}
-
-s3eBool s3eNextpeerIsCurrentlyInTournament_platform()
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    return (s3eBool)env->CallBooleanMethod(g_Obj, g_s3eNextpeerIsCurrentlyInTournament);
-}
-
-uint32 s3eNextpeerTimeLeftInTournament_platform()
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    return (uint32)env->CallIntMethod(g_Obj, g_s3eNextpeerTimeLeftInTournament);
+    env->CallVoidMethod(g_Obj, g_s3eNextpeerReportControlledTournamentOverWithScore, score);
 }
 
 void s3eNextpeerReportForfeitForCurrentTournament_platform()
@@ -266,51 +270,20 @@ void s3eNextpeerReportForfeitForCurrentTournament_platform()
     env->CallVoidMethod(g_Obj, g_s3eNextpeerReportForfeitForCurrentTournament);
 }
 
-void s3eNextpeerPushDataToOtherPlayers_platform(const void* data, uint32 length)
+void s3eNextpeerReportScoreForCurrentTournament_platform(uint32 score)
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerPushDataToOtherPlayers, data, length);
+    env->CallVoidMethod(g_Obj, g_s3eNextpeerReportScoreForCurrentTournament, score);
 }
 
-void s3eNextpeerPushNotificationToOtherPlayers_platform(const char * notice)
+uint32 s3eNextpeerTimeLeftForTournament_platform()
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
-    jstring notice_jstr = env->NewStringUTF(notice);
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerPushNotificationToOtherPlayers, notice_jstr);
+    return (uint32)env->CallIntMethod(g_Obj, g_s3eNextpeerTimeLeftForTournament);
 }
 
-void s3eNextpeerHandleOpenURL_platform(void* url)
+void s3eNextpeerUnreliablePushDataToOtherPlayers_platform(void* data, uint32 length)
 {
     JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerHandleOpenURL, url);
-}
-
-void s3eNextpeerRegisterOpenURLCallback_platform()
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerRegisterOpenURLCallback);
-}
-
-void s3eNextpeerSetUnifiedVirtualCurrencySupport_platform(s3eBool unifiedVirtualCurrencySupported)
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerSetUnifiedVirtualCurrencySupport, unifiedVirtualCurrencySupported);
-}
-
-void s3eNextpeerOpenFeed_platform()
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    env->CallVoidMethod(g_Obj, g_s3eNextpeerOpenFeed);
-}
-
-s3eResult s3eNextpeerRegisterCallback_platform(s3eNextperCallback cbid, s3eCallback fn, void* pData)
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    return (s3eResult)env->CallIntMethod(g_Obj, g_s3eNextpeerRegisterCallback, cbid, fn, pData);
-}
-
-s3eResult s3eNextpeerUnRegisterCallback_platform(s3eNextperCallback cbid, s3eCallback fn)
-{
-    JNIEnv* env = s3eEdkJNIGetEnv();
-    return (s3eResult)env->CallIntMethod(g_Obj, g_s3eNextpeerUnRegisterCallback, cbid, fn);
+    env->CallVoidMethod(g_Obj, g_s3eNextpeerUnreliablePushDataToOtherPlayers, data, length);
 }

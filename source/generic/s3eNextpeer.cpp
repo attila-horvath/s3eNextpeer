@@ -23,9 +23,44 @@ void s3eNextpeerTerminate()
     s3eNextpeerTerminate_platform();
 }
 
-void s3eNextpeerInitWithProductKey(const char* productKey)
+void s3eNextpeerChangeCurrentPlayerAvatarUrl(char* Url)
 {
-	s3eNextpeerInitWithProductKey_platform(productKey);
+	s3eNextpeerChangeCurrentPlayerAvatarUrl_platform(Url);
+}
+
+void s3eNextpeerChangeCurrentPlayerName(char* name)
+{
+	s3eNextpeerChangeCurrentPlayerName_platform(name);
+}
+
+void s3eNextpeerEnableRankingDisplay(bool enableRankingDisplay)
+{
+	s3eNextpeerEnableRankingDisplay_platform(enableRankingDisplay);
+}
+
+s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails()
+{
+	s3eNextpeerGetCurrentPlayerDetails_platform();
+}
+
+const char* s3eNextpeerGetNextpeerVersion()
+{
+	s3eNextpeerGetNextpeerVersion_platform();
+}
+
+bool s3eNextpeerIsCurrentlyInTournament()
+{
+	return s3eNextpeerIsCurrentlyInTournament_platform();
+}
+
+bool s3eNextpeerIsNextpeerInitialised()
+{
+	return s3eNextpeerIsNextpeerInitialised_platform();
+}
+
+bool s3eNextpeerIsNextpeerSupported()
+{
+	return s3eNextpeerIsNextpeerSupported_platform();
 }
 
 void s3eNextpeerLaunchDashboard()
@@ -33,34 +68,14 @@ void s3eNextpeerLaunchDashboard()
 	s3eNextpeerLaunchDashboard_platform();
 }
 
-void s3eNextpeerLaunchDashboardWithCurrencyAmount(uint32 unifiedVirtualCurrencyAmount)
+void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 length)
 {
-	s3eNextpeerLaunchDashboardWithCurrencyAmount_platform(unifiedVirtualCurrencyAmount);
+	s3eNextpeerPushDataToOtherPlayers_platform(data, length);
 }
 
-void s3eNextpeerDismissDashboard()
+void s3eNextpeerReportControlledTournamentOverWithScore(uint32 score)
 {
-	s3eNextpeerDismissDashboard_platform();
-}
-
-void s3eNextpeerShutDown()
-{
-	s3eNextpeerShutDown_platform();
-}
-
-void s3eNextpeerReportScoreForCurrentTournament(uint32 score)
-{
-	s3eNextpeerReportScoreForCurrentTournament_platform(score);
-}
-
-s3eBool s3eNextpeerIsCurrentlyInTournament()
-{
-	return s3eNextpeerIsCurrentlyInTournament_platform();
-}
-
-uint32 s3eNextpeerTimeLeftInTournament()
-{
-	return s3eNextpeerTimeLeftInTournament_platform();
+	s3eNextpeerReportControlledTournamentOverWithScore_platform(score);
 }
 
 void s3eNextpeerReportForfeitForCurrentTournament()
@@ -68,42 +83,17 @@ void s3eNextpeerReportForfeitForCurrentTournament()
 	s3eNextpeerReportForfeitForCurrentTournament_platform();
 }
 
-void s3eNextpeerPushDataToOtherPlayers(const void* data, uint32 length)
+void s3eNextpeerReportScoreForCurrentTournament(uint32 score)
 {
-	s3eNextpeerPushDataToOtherPlayers_platform(data, length);
+	s3eNextpeerReportScoreForCurrentTournament_platform(score);
 }
 
-void s3eNextpeerPushNotificationToOtherPlayers(const char * notice)
+uint32 s3eNextpeerTimeLeftForTournament()
 {
-	s3eNextpeerPushNotificationToOtherPlayers_platform(notice);
+	s3eNextpeerTimeLeftForTournament_platform();
 }
 
-void s3eNextpeerHandleOpenURL(void* url)
+void s3eNextpeerUnreliablePushDataToOtherPlayers(void* data, uint32 length)
 {
-	s3eNextpeerHandleOpenURL_platform(url);
-}
-
-void s3eNextpeerRegisterOpenURLCallback()
-{
-	s3eNextpeerRegisterOpenURLCallback_platform();
-}
-
-void s3eNextpeerSetUnifiedVirtualCurrencySupport(s3eBool unifiedVirtualCurrencySupported)
-{
-	s3eNextpeerSetUnifiedVirtualCurrencySupport_platform(unifiedVirtualCurrencySupported);
-}
-
-void s3eNextpeerOpenFeed()
-{
-	s3eNextpeerOpenFeed_platform();
-}
-
-s3eResult s3eNextpeerRegisterCallback(s3eNextperCallback cbid, s3eCallback fn, void* pData)
-{
-	return s3eNextpeerRegisterCallback_platform(cbid, fn, pData);
-}
-
-s3eResult s3eNextpeerUnRegisterCallback(s3eNextperCallback cbid, s3eCallback fn)
-{
-	return s3eNextpeerUnRegisterCallback_platform(cbid, fn);
+	s3eNextpeerUnreliablePushDataToOtherPlayers_platform(data, length);
 }
