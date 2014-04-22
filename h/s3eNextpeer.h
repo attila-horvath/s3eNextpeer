@@ -70,21 +70,21 @@ typedef struct s3eNextpeerTournamentPlayerResult{
 
     bool m_didForfeit;
     bool m_isStillPlaying;
-    s3eNextpeerTournamentPlayer* m_player;
+    char* m_player;  //player ID
     uint32 m_score;
 
 }s3eNextpeerTournamentPlayerResult;
 
 typedef struct s3eNextpeerTournamentStartData{
 
-    s3eNextpeerTournamentPlayer* m_currentPlayer;
+     char* m_currentPlayer; // currentplayer ID
     uint32 m_numberOfPlayers;
-    s3eNextpeerTournamentPlayer** m_opponents;   //todooooooooooooooooooooo
-    bool m_tournamentIsGameControlled;
-    const char* m_tournamentName;
+     char* m_opponents;   // a coma separated string of opponent's ids
+    int m_tournamentIsGameControlled;
+     char* m_tournamentName;
     uint32 m_tournamentRandomSeed;
     uint32 m_tournamentTimeSeconds;
-    const char* m_tournamentUuid;
+     char* m_tournamentUuid;
     
 } s3eNextpeerTournamentStartData;
 
@@ -139,19 +139,15 @@ void s3eNextpeerChangeCurrentPlayerName(char* name);
 
 void s3eNextpeerEnableRankingDisplay(bool enableRankingDisplay);
 
-s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails();
+char* s3eNextpeerGetCurrentPlayerDetails();
 
-const char* s3eNextpeerGetNextpeerVersion();
+char* s3eNextpeerGetNextpeerVersion();
 
 bool s3eNextpeerIsCurrentlyInTournament();
 
-bool s3eNextpeerIsNextpeerInitialised();
-
-bool s3eNextpeerIsNextpeerSupported();
-
 void s3eNextpeerLaunchDashboard();
 
-void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 length);
+void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 size);
 
 void s3eNextpeerReportControlledTournamentOverWithScore(uint32 score);
 
@@ -161,7 +157,7 @@ void s3eNextpeerReportScoreForCurrentTournament(uint32 score);
 
 uint32 s3eNextpeerTimeLeftForTournament();
 
-void s3eNextpeerUnreliablePushDataToOtherPlayers(void* data, uint32 length);
+void s3eNextpeerUnreliablePushDataToOtherPlayers(void* data, uint32 size);
 
 S3E_END_C_DECL
 

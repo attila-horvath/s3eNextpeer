@@ -39,6 +39,7 @@ deployments
 {
     android-external-jars="lib/android/android-support-v4.jar"
     android-external-jars="lib/android/nextpeer_dist.jar"
+	android-external-jars="lib/android/gson-2.2.4.jar"
     android-external-jars="lib/android/s3eNextpeer.jar"
     android-so="lib/android/libs3eNextpeer.so"
     android-external-res="res"

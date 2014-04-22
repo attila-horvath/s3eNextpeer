@@ -38,12 +38,12 @@ void s3eNextpeerEnableRankingDisplay(bool enableRankingDisplay)
 	s3eNextpeerEnableRankingDisplay_platform(enableRankingDisplay);
 }
 
-s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails()
+char* s3eNextpeerGetCurrentPlayerDetails()
 {
 	s3eNextpeerGetCurrentPlayerDetails_platform();
 }
 
-const char* s3eNextpeerGetNextpeerVersion()
+char* s3eNextpeerGetNextpeerVersion()
 {
 	s3eNextpeerGetNextpeerVersion_platform();
 }

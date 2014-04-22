@@ -20,6 +20,19 @@ public class s3eNextpeerActivity extends LoaderActivity
         Nextpeer.onStart();
 
     }
+	@Override
+	protected void onPause()
+	{
+		super.onPause();
+		Log.d(TAG,"s3eNextpeerActivity onPause()");
+	}
+	@Override
+	protected void onResume()
+	{
+		super.onResume();
+		Log.d(TAG,"s3eNextpeerActivity onResume()");
+		//Nextpeer.launch();
+	}
 	
 	@Override
 	protected void onStop()

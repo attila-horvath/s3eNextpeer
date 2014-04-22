@@ -48,9 +48,9 @@ void s3eNextpeerChangeCurrentPlayerName_platform(char* name);
 
 void s3eNextpeerEnableRankingDisplay_platform(bool enableRankingDisplay);
 
-s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails_platform();
+char* s3eNextpeerGetCurrentPlayerDetails_platform();
 
-const char* s3eNextpeerGetNextpeerVersion_platform();
+char* s3eNextpeerGetNextpeerVersion_platform();
 
 bool s3eNextpeerIsCurrentlyInTournament_platform();
 

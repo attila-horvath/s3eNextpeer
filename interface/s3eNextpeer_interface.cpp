@@ -27,18 +27,16 @@ typedef  s3eResult(*s3eNextpeerUnRegister_t)(s3eNextpeerCallback cbid, s3eCallba
 typedef       void(*s3eNextpeerChangeCurrentPlayerAvatarUrl_t)(char* Url);
 typedef       void(*s3eNextpeerChangeCurrentPlayerName_t)(char* name);
 typedef       void(*s3eNextpeerEnableRankingDisplay_t)(bool enableRankingDisplay);
-typedef s3eNextpeerTournamentPlayer(*s3eNextpeerGetCurrentPlayerDetails_t)();
-typedef const char*(*s3eNextpeerGetNextpeerVersion_t)();
+typedef      char*(*s3eNextpeerGetCurrentPlayerDetails_t)();
+typedef      char*(*s3eNextpeerGetNextpeerVersion_t)();
 typedef       bool(*s3eNextpeerIsCurrentlyInTournament_t)();
-typedef       bool(*s3eNextpeerIsNextpeerInitialised_t)();
-typedef       bool(*s3eNextpeerIsNextpeerSupported_t)();
 typedef       void(*s3eNextpeerLaunchDashboard_t)();
-typedef       void(*s3eNextpeerPushDataToOtherPlayers_t)(void* data, uint32 length);
+typedef       void(*s3eNextpeerPushDataToOtherPlayers_t)(void* data, uint32 size);
 typedef       void(*s3eNextpeerReportControlledTournamentOverWithScore_t)(uint32 score);
 typedef       void(*s3eNextpeerReportForfeitForCurrentTournament_t)();
 typedef       void(*s3eNextpeerReportScoreForCurrentTournament_t)(uint32 score);
 typedef     uint32(*s3eNextpeerTimeLeftForTournament_t)();
-typedef       void(*s3eNextpeerUnreliablePushDataToOtherPlayers_t)(void* data, uint32 length);
+typedef       void(*s3eNextpeerUnreliablePushDataToOtherPlayers_t)(void* data, uint32 size);
 
 /**
  * struct that gets filled in by s3eNextpeerRegister
@@ -53,8 +51,6 @@ typedef struct s3eNextpeerFuncs
     s3eNextpeerGetCurrentPlayerDetails_t m_s3eNextpeerGetCurrentPlayerDetails;
     s3eNextpeerGetNextpeerVersion_t m_s3eNextpeerGetNextpeerVersion;
     s3eNextpeerIsCurrentlyInTournament_t m_s3eNextpeerIsCurrentlyInTournament;
-    s3eNextpeerIsNextpeerInitialised_t m_s3eNextpeerIsNextpeerInitialised;
-    s3eNextpeerIsNextpeerSupported_t m_s3eNextpeerIsNextpeerSupported;
     s3eNextpeerLaunchDashboard_t m_s3eNextpeerLaunchDashboard;
     s3eNextpeerPushDataToOtherPlayers_t m_s3eNextpeerPushDataToOtherPlayers;
     s3eNextpeerReportControlledTournamentOverWithScore_t m_s3eNextpeerReportControlledTournamentOverWithScore;
@@ -207,18 +203,18 @@ void s3eNextpeerEnableRankingDisplay(bool enableRankingDisplay)
     return;
 }
 
-s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails()
+char* s3eNextpeerGetCurrentPlayerDetails()
 {
     IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[5] func: s3eNextpeerGetCurrentPlayerDetails"));
 
     if (!_extLoad())
-        return;
+        return NULL;
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    s3eNextpeerTournamentPlayer ret = g_Ext.m_s3eNextpeerGetCurrentPlayerDetails();
+    char* ret = g_Ext.m_s3eNextpeerGetCurrentPlayerDetails();
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
@@ -227,18 +223,18 @@ s3eNextpeerTournamentPlayer s3eNextpeerGetCurrentPlayerDetails()
     return ret;
 }
 
-const char* s3eNextpeerGetNextpeerVersion()
+char* s3eNextpeerGetNextpeerVersion()
 {
     IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[6] func: s3eNextpeerGetNextpeerVersion"));
 
     if (!_extLoad())
-        return;
+        return NULL;
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    const char* ret = g_Ext.m_s3eNextpeerGetNextpeerVersion();
+    char* ret = g_Ext.m_s3eNextpeerGetNextpeerVersion();
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
@@ -267,49 +263,9 @@ bool s3eNextpeerIsCurrentlyInTournament()
     return ret;
 }
 
-bool s3eNextpeerIsNextpeerInitialised()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[8] func: s3eNextpeerIsNextpeerInitialised"));
-
-    if (!_extLoad())
-        return 0;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    bool ret = g_Ext.m_s3eNextpeerIsNextpeerInitialised();
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return ret;
-}
-
-bool s3eNextpeerIsNextpeerSupported()
-{
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[9] func: s3eNextpeerIsNextpeerSupported"));
-
-    if (!_extLoad())
-        return 0;
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
-#endif
-
-    bool ret = g_Ext.m_s3eNextpeerIsNextpeerSupported();
-
-#ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
-#endif
-
-    return ret;
-}
-
 void s3eNextpeerLaunchDashboard()
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[10] func: s3eNextpeerLaunchDashboard"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[8] func: s3eNextpeerLaunchDashboard"));
 
     if (!_extLoad())
         return;
@@ -327,9 +283,9 @@ void s3eNextpeerLaunchDashboard()
     return;
 }
 
-void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 length)
+void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 size)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[11] func: s3eNextpeerPushDataToOtherPlayers"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[9] func: s3eNextpeerPushDataToOtherPlayers"));
 
     if (!_extLoad())
         return;
@@ -338,7 +294,7 @@ void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 length)
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    g_Ext.m_s3eNextpeerPushDataToOtherPlayers(data, length);
+    g_Ext.m_s3eNextpeerPushDataToOtherPlayers(data, size);
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
@@ -349,7 +305,7 @@ void s3eNextpeerPushDataToOtherPlayers(void* data, uint32 length)
 
 void s3eNextpeerReportControlledTournamentOverWithScore(uint32 score)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[12] func: s3eNextpeerReportControlledTournamentOverWithScore"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[10] func: s3eNextpeerReportControlledTournamentOverWithScore"));
 
     if (!_extLoad())
         return;
@@ -369,7 +325,7 @@ void s3eNextpeerReportControlledTournamentOverWithScore(uint32 score)
 
 void s3eNextpeerReportForfeitForCurrentTournament()
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[13] func: s3eNextpeerReportForfeitForCurrentTournament"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[11] func: s3eNextpeerReportForfeitForCurrentTournament"));
 
     if (!_extLoad())
         return;
@@ -389,7 +345,7 @@ void s3eNextpeerReportForfeitForCurrentTournament()
 
 void s3eNextpeerReportScoreForCurrentTournament(uint32 score)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[14] func: s3eNextpeerReportScoreForCurrentTournament"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[12] func: s3eNextpeerReportScoreForCurrentTournament"));
 
     if (!_extLoad())
         return;
@@ -409,10 +365,10 @@ void s3eNextpeerReportScoreForCurrentTournament(uint32 score)
 
 uint32 s3eNextpeerTimeLeftForTournament()
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[15] func: s3eNextpeerTimeLeftForTournament"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[13] func: s3eNextpeerTimeLeftForTournament"));
 
     if (!_extLoad())
-        return;
+        return 0;
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
@@ -427,9 +383,9 @@ uint32 s3eNextpeerTimeLeftForTournament()
     return ret;
 }
 
-void s3eNextpeerUnreliablePushDataToOtherPlayers(void* data, uint32 length)
+void s3eNextpeerUnreliablePushDataToOtherPlayers(void* data, uint32 size)
 {
-    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[16] func: s3eNextpeerUnreliablePushDataToOtherPlayers"));
+    IwTrace(NEXTPEER_VERBOSE, ("calling s3eNextpeer[14] func: s3eNextpeerUnreliablePushDataToOtherPlayers"));
 
     if (!_extLoad())
         return;
@@ -438,7 +394,7 @@ void s3eNextpeerUnreliablePushDataToOtherPlayers(void* data, uint32 length)
     s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
 #endif
 
-    g_Ext.m_s3eNextpeerUnreliablePushDataToOtherPlayers(data, length);
+    g_Ext.m_s3eNextpeerUnreliablePushDataToOtherPlayers(data, size);
 
 #ifdef LOADER_CALL_LOCK
     s3eDeviceLoaderCallDone(S3E_TRUE, NULL);

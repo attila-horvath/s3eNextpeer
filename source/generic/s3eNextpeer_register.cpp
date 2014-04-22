@@ -47,7 +47,7 @@ s3eResult s3eNextpeerUnRegister(s3eNextpeerCallback cbid, s3eCallback fn)
 void s3eNextpeerRegisterExt()
 {
     /* fill in the function pointer struct for this extension */
-    void* funcPtrs[17];
+    void* funcPtrs[15];
     funcPtrs[0] = (void*)s3eNextpeerRegister;
     funcPtrs[1] = (void*)s3eNextpeerUnRegister;
     funcPtrs[2] = (void*)s3eNextpeerChangeCurrentPlayerAvatarUrl;
@@ -56,20 +56,18 @@ void s3eNextpeerRegisterExt()
     funcPtrs[5] = (void*)s3eNextpeerGetCurrentPlayerDetails;
     funcPtrs[6] = (void*)s3eNextpeerGetNextpeerVersion;
     funcPtrs[7] = (void*)s3eNextpeerIsCurrentlyInTournament;
-    funcPtrs[8] = (void*)s3eNextpeerIsNextpeerInitialised;
-    funcPtrs[9] = (void*)s3eNextpeerIsNextpeerSupported;
-    funcPtrs[10] = (void*)s3eNextpeerLaunchDashboard;
-    funcPtrs[11] = (void*)s3eNextpeerPushDataToOtherPlayers;
-    funcPtrs[12] = (void*)s3eNextpeerReportControlledTournamentOverWithScore;
-    funcPtrs[13] = (void*)s3eNextpeerReportForfeitForCurrentTournament;
-    funcPtrs[14] = (void*)s3eNextpeerReportScoreForCurrentTournament;
-    funcPtrs[15] = (void*)s3eNextpeerTimeLeftForTournament;
-    funcPtrs[16] = (void*)s3eNextpeerUnreliablePushDataToOtherPlayers;
+    funcPtrs[8] = (void*)s3eNextpeerLaunchDashboard;
+    funcPtrs[9] = (void*)s3eNextpeerPushDataToOtherPlayers;
+    funcPtrs[10] = (void*)s3eNextpeerReportControlledTournamentOverWithScore;
+    funcPtrs[11] = (void*)s3eNextpeerReportForfeitForCurrentTournament;
+    funcPtrs[12] = (void*)s3eNextpeerReportScoreForCurrentTournament;
+    funcPtrs[13] = (void*)s3eNextpeerTimeLeftForTournament;
+    funcPtrs[14] = (void*)s3eNextpeerUnreliablePushDataToOtherPlayers;
 
     /*
      * Flags that specify the extension's use of locking and stackswitching
      */
-    int flags[17] = { 0 };
+    int flags[15] = { 0 };
 
     /*
      * Register the extension
